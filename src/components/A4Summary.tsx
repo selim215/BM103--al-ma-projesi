@@ -8,31 +8,31 @@ interface A4SheetProps {
 }
 
 export const A4Sheet: React.FC<A4SheetProps> = ({ week }) => (
-  <article className="a4-sheet mx-auto w-full max-w-[210mm] border border-slate-300 bg-white p-8 text-[#111827] shadow-sm">
+  <article className="a4-sheet mx-auto w-full max-w-[210mm] overflow-hidden border border-slate-300 bg-white p-5 text-[#111827] shadow-sm sm:p-8">
     <header className="mb-4 flex flex-wrap items-end justify-between gap-3 border-b-2 border-[#0f2342] pb-2.5">
-      <div>
+      <div className="min-w-0">
         <div className="text-[11px] font-bold tracking-wide text-red-700">
           BM103 Bilgisayar Mühendisliğinin Temelleri · {week.tag}
         </div>
-        <h2 className="text-lg font-extrabold text-[#0f2342]">
+        <h2 className="text-lg font-extrabold text-[#0f2342] [overflow-wrap:anywhere]">
           {week.title} — Nokta Atışı Özet
         </h2>
       </div>
-      <div className="text-right text-xs text-slate-600">
+      <div className="min-w-0 text-left text-xs text-slate-600 sm:text-right">
         <div>Doç. Dr. Feyza YILDIRIM OKAY</div>
-        <div>Kaynak: {week.pdfName}</div>
+        <div className="[overflow-wrap:anywhere]">Kaynak: {week.pdfName}</div>
       </div>
     </header>
 
     <div className="a4-cols grid grid-cols-1 gap-4 md:grid-cols-2">
       {week.summaryA4.map((sec, idx) => (
-        <section key={idx} className="a4-section">
-          <h3 className="mb-1.5 border-b border-slate-200 pb-1 text-sm font-bold text-red-700">
+        <section key={idx} className="a4-section min-w-0">
+          <h3 className="mb-1.5 border-b border-slate-200 pb-1 text-sm font-bold text-red-700 [overflow-wrap:anywhere]">
             {sec.h}
           </h3>
-          <ul className="list-disc space-y-1 pl-4 text-[13px] leading-snug text-slate-800">
+          <ul className="list-disc space-y-1 pl-4 text-[13px] leading-snug text-slate-800 [overflow-wrap:anywhere]">
             {sec.items.map((item, iIdx) => (
-              <li key={iIdx}>{item}</li>
+              <li key={iIdx} className="min-w-0">{item}</li>
             ))}
           </ul>
         </section>
@@ -78,7 +78,7 @@ export const AllA4View: React.FC = () => {
             Tüm Haftaların Kapsamlı A4 Özet Paketi
           </h1>
           <p className="text-sm text-slate-600">
-            Modül 0&apos;dan Hafta 6&apos;ya kadar tüm haftaların nokta atışı özetleri tek seferde A4 PDF olarak çıktı alınabilir.
+            Hafta 1&apos;den Hafta 7&apos;ye kadar tüm haftaların nokta atışı özetleri tek seferde A4 PDF olarak çıktı alınabilir.
           </p>
         </div>
         <button

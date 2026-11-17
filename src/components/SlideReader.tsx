@@ -79,10 +79,10 @@ export const WeekSlideReader: React.FC<WeekSlideReaderProps> = ({
       {/* Page Frame */}
       <div className="overflow-hidden rounded-xl border border-[#0f2342]">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b-4 border-red-700 bg-[#0f2342] px-5 py-3.5 text-white">
-          <strong className="text-base font-bold">
+          <strong className="min-w-0 text-base font-bold [overflow-wrap:anywhere]">
             PDF Sayfa {slide.n}: {slide.t}
           </strong>
-          <span className="font-mono text-xs text-slate-300">
+          <span className="shrink-0 font-mono text-xs text-slate-300">
             {week.tag} · {safeIdx + 1}/{week.slides.length}
           </span>
         </div>
@@ -161,7 +161,7 @@ export const AllSlidesView: React.FC<AllSlidesViewProps> = ({
                 onSelectWeek(w.id);
                 onSelectSlideIdx(0);
               }}
-              className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-colors whitespace-nowrap ${
+              className={`max-w-full rounded-lg px-3 py-1.5 text-left text-xs font-bold transition-colors sm:whitespace-nowrap ${
                 w.id === activeWeek.id
                   ? 'bg-[#0f2342] text-white'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'

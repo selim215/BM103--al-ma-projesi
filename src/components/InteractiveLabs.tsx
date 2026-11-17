@@ -28,37 +28,38 @@ export const InteractiveLabs: React.FC<InteractiveLabsProps> = ({
   onPeekSlide,
   onJumpToWeek,
 }) => {
-  if (week.id === 'w0') return <LabW0 onPeekSlide={onPeekSlide} onJumpToWeek={onJumpToWeek} />;
-  if (week.id === 'w1') return <LabW1 onPeekSlide={onPeekSlide} />;
-  if (week.id === 'w2') return <LabW2 onPeekSlide={onPeekSlide} />;
-  if (week.id === 'w3') return <LabW3 onPeekSlide={onPeekSlide} />;
-  if (week.id === 'w4') return <LabW4 onPeekSlide={onPeekSlide} />;
+  if (week.id === 'w1') return <LabW0 onPeekSlide={onPeekSlide} onJumpToWeek={onJumpToWeek} />;
+  if (week.id === 'w2') return <LabW1 onPeekSlide={onPeekSlide} />;
+  if (week.id === 'w3') return <LabW2 onPeekSlide={onPeekSlide} />;
+  if (week.id === 'w4') return <LabW3 onPeekSlide={onPeekSlide} />;
   if (week.id === 'w5') return <LabW5 onPeekSlide={onPeekSlide} />;
-  if (week.id === 'w6') return <LabW6 onPeekSlide={onPeekSlide} />;
+  if (week.id === 'w6') return <LabW4 onPeekSlide={onPeekSlide} />;
+  if (week.id === 'w7') return <LabW6 onPeekSlide={onPeekSlide} />;
   return null;
 };
 
 // ============================================================================
-// MODÜL 0: DERS TANITIMI
+// HAFTA 1: DERS TANITIMI VE İZLENCE
 // ============================================================================
 const LabW0: React.FC<{
   onPeekSlide: (w: string, s: number) => void;
   onJumpToWeek?: (w: string) => void;
 }> = ({ onPeekSlide, onJumpToWeek }) => {
   const syllabus = [
-    { title: 'Bilgisayar Mühendisliği Tanımı ve Bileşenleri', targetWeek: 'w1' },
-    { title: 'Boole Cebri', targetWeek: 'w2' },
-    { title: 'Algoritmalar', targetWeek: 'w3' },
-    { title: 'Programlama Dilleri', targetWeek: 'w4' },
-    { title: 'İşletim Sistemleri', targetWeek: 'w5' },
-    { title: 'Bilgisayar Ağları', targetWeek: null },
-    { title: 'Sayı Sistemleri', targetWeek: null },
-    { title: 'Yazılım Mühendisliği', targetWeek: null },
-    { title: 'Veri Yapıları', targetWeek: null },
-    { title: 'Veritabanı Sistemleri', targetWeek: null },
-    { title: 'Dosya Organizasyonu', targetWeek: null },
-    { title: 'Akademik Etik', targetWeek: null },
-    { title: 'Yapay Zeka', targetWeek: null },
+    { title: 'Bilgisayar Mühendisliği Tanımı ve Bileşenleri', targetWeek: 'w2', tag: 'Hafta 2' },
+    { title: 'Boole Cebri ve Lojik Kapılar', targetWeek: 'w3', tag: 'Hafta 3' },
+    { title: 'Algoritmalar, Akış Şemaları ve Sözde Kod', targetWeek: 'w4', tag: 'Hafta 4' },
+    { title: 'İşletim Sistemleri', targetWeek: 'w5', tag: 'Hafta 5' },
+    { title: 'Programlama Dilleri ve OOP', targetWeek: 'w6', tag: 'Hafta 6' },
+    { title: 'Mikroişlemciler, Mimari ve Makine Dili', targetWeek: 'w7', tag: 'Hafta 7' },
+    { title: 'Bilgisayar Ağları', targetWeek: null, tag: null },
+    { title: 'Sayı Sistemleri', targetWeek: null, tag: null },
+    { title: 'Yazılım Mühendisliği', targetWeek: null, tag: null },
+    { title: 'Veri Yapıları', targetWeek: null, tag: null },
+    { title: 'Veritabanı Sistemleri', targetWeek: null, tag: null },
+    { title: 'Dosya Organizasyonu', targetWeek: null, tag: null },
+    { title: 'Akademik Etik', targetWeek: null, tag: null },
+    { title: 'Yapay Zeka', targetWeek: null, tag: null },
   ];
 
   return (
@@ -68,7 +69,7 @@ const LabW0: React.FC<{
           <h2 className="text-lg font-bold text-[#0f2342]">
             BM103 Ders Bilgileri ve Değerlendirme Ölçütleri
           </h2>
-          <SlideRefButton weekId="w0" slideNum={2} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w1" slideNum={2} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -125,7 +126,7 @@ const LabW0: React.FC<{
           <h2 className="text-lg font-bold text-[#0f2342]">
             Ders Kitabı, Yardımcı Kaynaklar ve İzlence Başlıkları
           </h2>
-          <SlideRefButton weekId="w0" slideNum={3} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w1" slideNum={3} onPeekSlide={onPeekSlide} />
         </div>
 
         <ul className="mb-5 list-disc space-y-1.5 pl-5 text-sm text-slate-700">
@@ -144,17 +145,17 @@ const LabW0: React.FC<{
                 key={idx}
                 type="button"
                 onClick={() => onJumpToWeek(item.targetWeek!)}
-                className="flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-left text-xs font-semibold text-[#0f2342] transition-colors hover:border-[#0f2342] hover:bg-white"
+                className="flex min-w-0 items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-left text-xs font-semibold text-[#0f2342] transition-colors hover:border-[#0f2342] hover:bg-white"
               >
-                <span>{idx + 1}. {item.title}</span>
-                <span className="ml-2 shrink-0 text-[11px] font-bold text-red-700">Modüle Git →</span>
+                <span className="min-w-0">{idx + 1}. {item.title}</span>
+                <span className="ml-2 shrink-0 text-[11px] font-bold text-red-700">{item.tag} →</span>
               </button>
             ) : (
               <div
                 key={idx}
-                className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-600"
+                className="flex min-w-0 items-center justify-between rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-600"
               >
-                <span>{idx + 1}. {item.title}</span>
+                <span className="min-w-0">{idx + 1}. {item.title}</span>
                 <span className="ml-2 shrink-0 text-[11px] text-slate-400">Sayfa 4</span>
               </div>
             )
@@ -245,7 +246,7 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             1. İnteraktif Kuşaklar Zaman Tüneli
           </h2>
-          <SlideRefButton weekId="w1" slideNum={g.slide} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w2" slideNum={g.slide} onPeekSlide={onPeekSlide} />
         </div>
         <p className="mb-3 text-sm text-slate-600">
           Bir dönem seçerek o kuşağın teknolojisini, ilk modellerini ve ayırt edici özelliklerini inceleyin:
@@ -290,7 +291,7 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             2. Bilgisayar Sisteminin 5 İşlevi ve Giriş–İşleme–Çıktı Akışı
           </h2>
-          <SlideRefButton weekId="w1" slideNum={26} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w2" slideNum={26} onPeekSlide={onPeekSlide} />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
@@ -320,10 +321,10 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             3. Donanım ve Yazılım Bileşenleri Haritası
           </h2>
-          <SlideRefButton weekId="w1" slideNum={29} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w2" slideNum={29} onPeekSlide={onPeekSlide} />
         </div>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-          <div>
+          <div className="min-w-0 overflow-x-auto">
             <h3 className="mb-2 text-sm font-bold text-red-700">Donanım (Hardware)</h3>
             <table className="w-full border-collapse text-sm">
               <thead>
@@ -355,7 +356,7 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
             </table>
           </div>
 
-          <div>
+          <div className="min-w-0 overflow-x-auto">
             <h3 className="mb-2 text-sm font-bold text-[#0f2342]">Yazılım (Software)</h3>
             <table className="w-full border-collapse text-sm">
               <thead>
@@ -455,7 +456,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             1. İnteraktif Lojik Kapı ve Doğruluk Tablosu Simülatörü
           </h2>
-          <SlideRefButton weekId="w2" slideNum={7} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w3" slideNum={7} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">
@@ -539,7 +540,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               width="250"
               height="96"
               viewBox="0 0 250 96"
-              className="rounded-lg border border-slate-200 bg-white"
+              className="h-auto max-w-full rounded-lg border border-slate-200 bg-white"
               aria-label={`${gateType} lojik kapı diyagramı`}
             >
               <line
@@ -644,7 +645,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             2. İnteraktif Tabanlar Dönüştürücü (0–15)
           </h2>
-          <SlideRefButton weekId="w2" slideNum={5} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w3" slideNum={5} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
@@ -684,10 +685,10 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             3. Boole İndirgeme Çözüm Adımları ve Karnaugh Diyagramı
           </h2>
-          <SlideRefButton weekId="w2" slideNum={20} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w3" slideNum={20} onPeekSlide={onPeekSlide} />
         </div>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <pre className="overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100">
+          <pre className="min-w-0 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100">
 {`Soru 1: ABC + ABC' + AB' + BC'
 = AB(C + C') + AB' + BC'   [C+C'=1]
 = AB + AB' + BC'
@@ -700,7 +701,7 @@ Soru 2: (A+B)(AC+AC'+CC') + AB + B
 = A + AB + AB + B          [A.A=A]
 = A(1 + B) + B = A + B`}
           </pre>
-          <pre className="overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100">
+          <pre className="min-w-0 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100">
 {`Soru 3 İspat: A + A'B = A + B
 = (A + AB) + A'B           [Yutma: A=A+AB]
 = A + B(A + A')            [A+A'=1]
@@ -777,63 +778,67 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             1. Akış Şeması 8 Standart Sembolü
           </h2>
-          <SlideRefButton weekId="w3" slideNum={9} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w4" slideNum={9} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <table className="w-full border-collapse text-sm">
-            <thead>
-              <tr className="bg-[#0f2342] text-white">
-                <th className="border border-slate-300 px-3 py-2 text-left">Sembol Adı</th>
-                <th className="border border-slate-300 px-3 py-2 text-left">İşlevi (Sayfa 9)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border border-slate-200 px-3 py-2 font-semibold">Uçbirim (Terminal)</td>
-                <td className="border border-slate-200 px-3 py-2">İşlemin ya da programın başlayacağı ve sonlanacağı kısmı belirtir.</td>
-              </tr>
-              <tr className="bg-slate-50">
-                <td className="border border-slate-200 px-3 py-2 font-semibold">İşlem (Process)</td>
-                <td className="border border-slate-200 px-3 py-2">İşlemcinin ya da belleğin içerisinde gerçekleşecek herhangi bir tipteki işlemi belirtir.</td>
-              </tr>
-              <tr>
-                <td className="border border-slate-200 px-3 py-2 font-semibold">Girdi / Çıktı (I/O)</td>
-                <td className="border border-slate-200 px-3 py-2">Bilgisayarın veri alacağını ya da çıktı vereceğini belirtir.</td>
-              </tr>
-              <tr className="bg-slate-50">
-                <td className="border border-slate-200 px-3 py-2 font-semibold">Karar (Decision)</td>
-                <td className="border border-slate-200 px-3 py-2">İkili sistemde cevap verilebilecek sorular (Evet/Hayır, Doğru/Yanlış).</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="min-w-0 overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-[#0f2342] text-white">
+                  <th className="border border-slate-300 px-3 py-2 text-left">Sembol Adı</th>
+                  <th className="border border-slate-300 px-3 py-2 text-left">İşlevi (Sayfa 9)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-slate-200 px-3 py-2 font-semibold">Uçbirim (Terminal)</td>
+                  <td className="border border-slate-200 px-3 py-2">İşlemin ya da programın başlayacağı ve sonlanacağı kısmı belirtir.</td>
+                </tr>
+                <tr className="bg-slate-50">
+                  <td className="border border-slate-200 px-3 py-2 font-semibold">İşlem (Process)</td>
+                  <td className="border border-slate-200 px-3 py-2">İşlemcinin ya da belleğin içerisinde gerçekleşecek herhangi bir tipteki işlemi belirtir.</td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-200 px-3 py-2 font-semibold">Girdi / Çıktı (I/O)</td>
+                  <td className="border border-slate-200 px-3 py-2">Bilgisayarın veri alacağını ya da çıktı vereceğini belirtir.</td>
+                </tr>
+                <tr className="bg-slate-50">
+                  <td className="border border-slate-200 px-3 py-2 font-semibold">Karar (Decision)</td>
+                  <td className="border border-slate-200 px-3 py-2">İkili sistemde cevap verilebilecek sorular (Evet/Hayır, Doğru/Yanlış).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <table className="w-full border-collapse text-sm">
-            <thead>
-              <tr className="bg-[#0f2342] text-white">
-                <th className="border border-slate-300 px-3 py-2 text-left">Sembol Adı</th>
-                <th className="border border-slate-300 px-3 py-2 text-left">İşlevi (Sayfa 9)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border border-slate-200 px-3 py-2 font-semibold">Bağlaç (Connector)</td>
-                <td className="border border-slate-200 px-3 py-2">Çizgiler kesişmeksizin akış diyagramı hazırlanmasını sağlar.</td>
-              </tr>
-              <tr className="bg-slate-50">
-                <td className="border border-slate-200 px-3 py-2 font-semibold">Belirlenmiş Eylem</td>
-                <td className="border border-slate-200 px-3 py-2">Önceden tanımlanmış eylemler dizisinin, fonksiyonun kullanılacağını belirtir (subroutine).</td>
-              </tr>
-              <tr>
-                <td className="border border-slate-200 px-3 py-2 font-semibold">Belge (Document)</td>
-                <td className="border border-slate-200 px-3 py-2">Bir belgenin girdi olarak alındığını ya da çıktı olarak verildiğini belirtir.</td>
-              </tr>
-              <tr className="bg-slate-50">
-                <td className="border border-slate-200 px-3 py-2 font-semibold">Akış Çizgileri</td>
-                <td className="border border-slate-200 px-3 py-2">Akış yönünü gösterir.</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="min-w-0 overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-[#0f2342] text-white">
+                  <th className="border border-slate-300 px-3 py-2 text-left">Sembol Adı</th>
+                  <th className="border border-slate-300 px-3 py-2 text-left">İşlevi (Sayfa 9)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-slate-200 px-3 py-2 font-semibold">Bağlaç (Connector)</td>
+                  <td className="border border-slate-200 px-3 py-2">Çizgiler kesişmeksizin akış diyagramı hazırlanmasını sağlar.</td>
+                </tr>
+                <tr className="bg-slate-50">
+                  <td className="border border-slate-200 px-3 py-2 font-semibold">Belirlenmiş Eylem</td>
+                  <td className="border border-slate-200 px-3 py-2">Önceden tanımlanmış eylem/fonksiyonların kullanılacağını belirtir (subroutine).</td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-200 px-3 py-2 font-semibold">Belge (Document)</td>
+                  <td className="border border-slate-200 px-3 py-2">Bir belgenin girdi olarak alındığını ya da çıktı olarak verildiğini belirtir.</td>
+                </tr>
+                <tr className="bg-slate-50">
+                  <td className="border border-slate-200 px-3 py-2 font-semibold">Akış Çizgileri</td>
+                  <td className="border border-slate-200 px-3 py-2">Akış yönünü gösterir.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -842,7 +847,7 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             2. İnteraktif Algoritma Adım İzleyici
           </h2>
-          <SlideRefButton weekId="w3" slideNum={tr.slide} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w4" slideNum={tr.slide} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">
@@ -959,7 +964,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             1. Aynı Problem (1&apos;den 5&apos;e Toplam), 4 Farklı Paradigma
           </h2>
-          <SlideRefButton weekId="w4" slideNum={17} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w6" slideNum={17} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">
@@ -997,7 +1002,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             2. Bir Programın Yolculuğu ve Hibrit Java Akışı
           </h2>
-          <SlideRefButton weekId="w4" slideNum={35} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w6" slideNum={35} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-5">
@@ -1040,7 +1045,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             3. İnteraktif OOP Laboratuvarı: Kapsülleme ve Çok Biçimlilik
           </h2>
-          <SlideRefButton weekId="w4" slideNum={45} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w6" slideNum={45} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
@@ -1052,7 +1057,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                   'HATA (Sayfa 45): laser1.RemainingPower = 999; → private alana yalnızca LaserClass içinden erişilebilir!'
                 )
               }
-              className="rounded-lg bg-red-700 px-3.5 py-2 font-mono text-xs font-bold text-white transition-colors hover:bg-red-800 whitespace-nowrap"
+              className="max-w-full rounded-lg bg-red-700 px-3.5 py-2 text-left font-mono text-xs font-bold text-white transition-colors hover:bg-red-800 sm:whitespace-nowrap"
             >
               laser1.RemainingPower = 999;
             </button>
@@ -1352,7 +1357,7 @@ const LabW6: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             1. İnteraktif Sanal Makine (Ek-C) Çalıştırıcısı
           </h2>
-          <SlideRefButton weekId="w6" slideNum={40} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w7" slideNum={40} onPeekSlide={onPeekSlide} />
         </div>
         <p className="mb-3 text-sm text-slate-600">
           Sayfa 40–42&apos;deki toplama programını (<code>156C, 166D, 5056, 306E, C000</code>) adım adım çalıştırın:
@@ -1457,7 +1462,7 @@ const LabW6: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               </div>
             </div>
 
-            <div className="rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100">
+            <div className="min-w-0 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100">
               <div className={vmStep === 1 ? 'font-bold text-amber-300' : ''}>
                 A0-A1: 15 6C {vmStep === 1 ? '◀ Yürütülüyor (LOAD R5, [6C])' : ''}
               </div>
@@ -1487,7 +1492,7 @@ const LabW6: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <h2 className="text-lg font-bold text-[#0f2342]">
             2. Adresleme Modları Gezgini
           </h2>
-          <SlideRefButton weekId="w6" slideNum={20} onPeekSlide={onPeekSlide} />
+          <SlideRefButton weekId="w7" slideNum={20} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">

@@ -100,7 +100,7 @@ export const QuickQuiz: React.FC<QuickQuizProps> = ({
                         onChange={() => onSelect(qIdx, oIdx)}
                         className="mt-0.5 accent-[#0f2342]"
                       />
-                      <span>
+                      <span className="min-w-0 [overflow-wrap:anywhere]">
                         <strong className="mr-1.5 font-mono">{String.fromCharCode(65 + oIdx)})</strong>
                         {opt}
                       </span>
@@ -116,7 +116,7 @@ export const QuickQuiz: React.FC<QuickQuizProps> = ({
                   ) : (
                     <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-700" />
                   )}
-                  <div>
+                  <div className="min-w-0 [overflow-wrap:anywhere]">
                     <strong className={isCorrect ? 'text-emerald-800' : 'text-red-800'}>
                       {isCorrect ? 'Doğru' : chosen === undefined ? 'Boş Bırakıldı' : 'Yanlış'}
                     </strong>
@@ -131,7 +131,7 @@ export const QuickQuiz: React.FC<QuickQuizProps> = ({
       </div>
 
       {!verified && (
-        <div className="mt-5 flex items-center justify-between gap-4">
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
           <span className="text-xs text-slate-500">
             Tüm soruları işaretledikten sonra doğrulayabilirsiniz.
           </span>

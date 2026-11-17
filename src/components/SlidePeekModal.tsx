@@ -50,8 +50,8 @@ export const SlidePeekModal: React.FC<SlidePeekModalProps> = ({ peek, onClose, o
           <div dangerouslySetInnerHTML={{ __html: slide.body }} />
         </div>
 
-        <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 px-5 py-3">
-          <span className="text-xs text-slate-500">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 bg-slate-50 px-5 py-3">
+          <span className="min-w-0 text-xs text-slate-500 [overflow-wrap:anywhere]">
             Kaynak: {week.title}
           </span>
           {onOpenFullReader && (
