@@ -28,7 +28,7 @@ export const QuickQuiz: React.FC<QuickQuizProps> = ({
     <section className="rounded-xl border border-slate-200 bg-white p-6">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
         <div>
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             {week.tag} — Hızlı Soru Çöz ve Doğrula
           </h2>
           <p className="text-sm text-slate-600">
@@ -69,7 +69,7 @@ export const QuickQuiz: React.FC<QuickQuizProps> = ({
                   : 'border-slate-200 bg-white'
               }`}
             >
-              <div className="mb-3 text-[15px] font-bold text-[#0f2342]">
+              <div className="mb-3 text-[15px] font-bold text-[#09251C]">
                 {qIdx + 1}. {q.q}
               </div>
 
@@ -88,8 +88,8 @@ export const QuickQuiz: React.FC<QuickQuizProps> = ({
                           : showBad
                           ? 'border-red-400 bg-red-50 text-red-950'
                           : isChosen
-                          ? 'border-[#0f2342] bg-slate-100 font-semibold text-[#0f2342]'
-                          : 'border-slate-200 bg-white text-slate-800 hover:bg-slate-50'
+                          ? 'border-[#09251C] bg-[#F8EADC]/60 font-semibold text-[#09251C]'
+                          : 'border-slate-200 bg-white text-slate-800 hover:bg-[#FAF6F0]'
                       } ${verified ? 'cursor-default' : ''}`}
                     >
                       <input
@@ -98,7 +98,7 @@ export const QuickQuiz: React.FC<QuickQuizProps> = ({
                         checked={isChosen}
                         disabled={verified}
                         onChange={() => onSelect(qIdx, oIdx)}
-                        className="mt-0.5 accent-[#0f2342]"
+                        className="mt-0.5 accent-[#09251C]"
                       />
                       <span className="min-w-0 [overflow-wrap:anywhere]">
                         <strong className="mr-1.5 font-mono">{String.fromCharCode(65 + oIdx)})</strong>
@@ -138,7 +138,7 @@ export const QuickQuiz: React.FC<QuickQuizProps> = ({
           <button
             type="button"
             onClick={onVerify}
-            className="rounded-lg bg-red-700 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-red-800 whitespace-nowrap"
+            className="rounded-lg bg-[#A55704] px-5 py-2.5 text-sm font-bold text-[#F8EADC] transition-colors hover:bg-[#894603] whitespace-nowrap"
           >
             Cevapları Doğrula ve Puanla
           </button>

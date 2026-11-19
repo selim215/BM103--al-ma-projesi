@@ -67,15 +67,15 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
   };
 
   return (
-    <div className="flex min-h-screen flex-col overflow-x-clip bg-slate-50 text-slate-900">
+    <div className="flex min-h-screen flex-col overflow-x-clip bg-[#FAF6F0] text-[#09251C]">
       {/* Three-Zone Top Bar */}
-      <header className="no-print sticky top-0 z-40 border-b-2 border-red-700 bg-[#0f2342] text-white">
+      <header className="no-print sticky top-0 z-40 border-b-2 border-[#A55704] bg-[#09251C] text-[#F8EADC]">
         <div className="mx-auto flex max-w-[1380px] items-center justify-between gap-4 px-5 py-3.5 sm:gap-8">
           {/* Zone 1: Brand Wordmark */}
           <button
             type="button"
             onClick={() => setTopMode('learn')}
-            className="min-w-0 truncate text-left text-base font-extrabold tracking-tight text-white hover:text-slate-200 sm:text-lg"
+            className="min-w-0 truncate text-left text-base font-extrabold tracking-tight text-[#F8EADC] hover:text-[#F3D2AF] sm:text-lg"
           >
             BM101 Bilgisayar Programlama
           </button>
@@ -96,8 +96,8 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
                   onClick={() => setTopMode(nav.id as BM101TopMode)}
                   className={`shrink-0 whitespace-nowrap border-b-2 py-1 text-sm font-semibold transition-colors ${
                     active
-                      ? 'border-red-500 text-white'
-                      : 'border-transparent text-slate-300 hover:border-slate-400 hover:text-white'
+                      ? 'border-[#F3D2AF] text-[#F8EADC]'
+                      : 'border-transparent text-[#F8EADC]/75 hover:border-[#F3D2AF]/60 hover:text-[#F8EADC]'
                   }`}
                 >
                   {nav.label}
@@ -111,7 +111,7 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
             <button
               type="button"
               onClick={() => setTopMode('exam')}
-              className="shrink-0 whitespace-nowrap rounded-lg bg-red-700 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-red-800"
+              className="shrink-0 whitespace-nowrap rounded-lg bg-[#A55704] px-4 py-2 text-xs font-bold text-[#F8EADC] transition-colors hover:bg-[#894603]"
             >
               Vize Çöz
             </button>
@@ -119,7 +119,7 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
         </div>
 
         {/* Mobile Nav Strip */}
-        <div className="flex items-center gap-4 overflow-x-auto border-t border-white/10 px-5 py-2 md:hidden">
+        <div className="flex items-center gap-4 overflow-x-auto border-t border-[#F3D2AF]/15 px-5 py-2 md:hidden">
           {[
             { id: 'learn', label: 'Dersler' },
             { id: 'examples', label: 'Örnekler' },
@@ -132,7 +132,7 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
               type="button"
               onClick={() => setTopMode(nav.id as BM101TopMode)}
               className={`shrink-0 whitespace-nowrap text-xs font-semibold ${
-                topMode === nav.id ? 'text-red-300 underline underline-offset-4' : 'text-slate-300'
+                topMode === nav.id ? 'text-[#F3D2AF] underline underline-offset-4' : 'text-[#F8EADC]/75'
               }`}
             >
               {nav.label}
@@ -144,18 +144,18 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
       {/* Main App Shell */}
       <div className="mx-auto grid w-full max-w-[1380px] flex-1 grid-cols-1 items-start gap-6 px-4 py-6 sm:px-5 lg:grid-cols-[290px_1fr]">
         {/* Sidebar */}
-        <aside className="no-print rounded-xl border border-[#0f2342]/20 bg-[#f2f6fb] p-4 shadow-sm lg:sticky lg:top-20">
+        <aside className="no-print sidebar-scroll rounded-xl border border-[#09251C]/15 bg-[#F5ECE0] p-4 shadow-sm lg:sticky lg:top-20 lg:max-h-[calc(100vh-6.25rem)] lg:overflow-y-auto lg:overscroll-contain">
           {/* Course Switcher Box */}
           <div className="mb-4 rounded-lg border border-sky-300/80 bg-white p-3 shadow-xs">
             <div className="flex items-center justify-between gap-2">
-              <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#0f2342]">
+              <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#09251C]">
                 <Code2 className="h-3.5 w-3.5 text-sky-700" />
                 Aktif Ders: BM101
               </span>
               <button
                 type="button"
                 onClick={onOpenCourseSelector}
-                className="inline-flex items-center gap-1 rounded-md border border-[#0f2342]/25 bg-slate-50 px-2 py-1 text-[11px] font-bold text-[#0f2342] hover:bg-[#0f2342] hover:text-white"
+                className="inline-flex items-center gap-1 rounded-md border border-[#09251C]/20 bg-[#FAF6F0] px-2 py-1 text-[11px] font-bold text-[#09251C] hover:bg-[#09251C] hover:text-[#F8EADC]"
               >
                 <ArrowLeftRight className="h-3 w-3" />
                 Ders Değiştir
@@ -163,7 +163,7 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
             </div>
           </div>
 
-          <div className="mb-3 px-2 text-xs font-bold tracking-wide text-slate-600">
+          <div className="mb-3 px-2 text-xs font-bold tracking-wide text-[#09251C]/70">
             BM101 Konular &amp; Laboratuvarlar
           </div>
 
@@ -177,19 +177,19 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
                   onClick={() => handleSelectWeek(w.id)}
                   className={`flex w-full items-start gap-2.5 rounded-lg border px-3 py-2.5 text-left transition-colors ${
                     isSelected
-                      ? 'border-[#0f2342]/35 bg-white shadow-xs'
-                      : 'border-transparent bg-white/60 hover:border-slate-300/70 hover:bg-white'
+                      ? 'border-[#A55704]/45 bg-white shadow-xs'
+                      : 'border-transparent bg-white/65 hover:border-[#A55704]/25 hover:bg-white'
                   }`}
                 >
                   <span
                     className={`mt-0.5 shrink-0 whitespace-nowrap rounded px-2 py-0.5 text-[11px] font-bold ${
-                      isSelected ? 'bg-red-700 text-white' : 'bg-[#0f2342] text-white'
+                      isSelected ? 'bg-[#A55704] text-[#F8EADC]' : 'bg-[#09251C] text-[#F8EADC]'
                     }`}
                   >
                     {w.tag}
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-sm font-bold leading-snug text-[#0f2342]">
+                    <span className="block text-sm font-bold leading-snug text-[#09251C]">
                       {w.title}
                     </span>
                     <span className="mt-0.5 block truncate text-xs text-slate-500">
@@ -201,7 +201,7 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
             })}
           </div>
 
-          <hr className="my-4 border-slate-200" />
+          <hr className="my-4 border-[#09251C]/10" />
 
           {/* Quick Secondary Links inside Sidebar */}
           <div className="mb-4 grid grid-cols-2 gap-1.5">
@@ -210,8 +210,8 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
               onClick={() => setTopMode('slides')}
               className={`rounded-lg border px-2.5 py-2 text-xs font-bold transition-colors ${
                 topMode === 'slides'
-                  ? 'border-[#0f2342] bg-[#0f2342] text-white'
-                  : 'border-slate-200 bg-slate-50 text-[#0f2342] hover:bg-slate-100'
+                  ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]'
+                  : 'border-[#09251C]/15 bg-white text-[#09251C] hover:bg-[#FAF6F0]'
               }`}
             >
               12 PDF Arşivi
@@ -221,8 +221,8 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
               onClick={() => setTopMode('a4')}
               className={`rounded-lg border px-2.5 py-2 text-xs font-bold transition-colors ${
                 topMode === 'a4'
-                  ? 'border-[#0f2342] bg-[#0f2342] text-white'
-                  : 'border-slate-200 bg-slate-50 text-[#0f2342] hover:bg-slate-100'
+                  ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]'
+                  : 'border-[#09251C]/15 bg-white text-[#09251C] hover:bg-[#FAF6F0]'
               }`}
             >
               Tüm A4 Özet
@@ -248,15 +248,15 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
         <main className="min-w-0 space-y-5">
           {topMode === 'learn' && (
             <>
-              <section className="no-print flex flex-wrap items-center justify-between gap-5 rounded-xl bg-[#0f2342] p-6 text-white">
+              <section className="no-print flex flex-wrap items-center justify-between gap-5 rounded-xl bg-[#09251C] p-6 text-[#F8EADC]">
                 <div className="min-w-0 max-w-3xl">
-                  <div className="mb-1 text-xs font-semibold text-sky-300 [overflow-wrap:anywhere]">
+                  <div className="mb-1 text-xs font-semibold text-[#F3D2AF] [overflow-wrap:anywhere]">
                     Teorik: Dr. Hüseyin Temuçin · Lab: Arş. Gör. Kevser Özdem Karaca · {activeWeek.tag} · {activeWeek.pdfName} &amp; {activeWeek.labPdfName}
                   </div>
                   <h1 className="text-balance text-2xl font-extrabold leading-tight [overflow-wrap:anywhere] sm:text-3xl">
                     {activeWeek.title}
                   </h1>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                  <p className="mt-2 text-sm leading-relaxed text-[#F8EADC]/80">
                     {activeWeek.desc}
                   </p>
                 </div>
@@ -265,7 +265,7 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
                   <button
                     type="button"
                     onClick={() => setSubTab('slides')}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-white/25 bg-white/10 px-3.5 py-2 text-xs font-bold text-white hover:bg-white/20 whitespace-nowrap"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#F3D2AF]/30 bg-white/10 px-3.5 py-2 text-xs font-bold text-[#F8EADC] hover:bg-white/20 whitespace-nowrap"
                   >
                     <BookOpen className="h-3.5 w-3.5" />
                     Görselli Slaytlar (1:1)
@@ -273,7 +273,7 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
                   <button
                     type="button"
                     onClick={() => setSubTab('a4')}
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-red-700 px-3.5 py-2 text-xs font-bold text-white hover:bg-red-800 whitespace-nowrap"
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-[#A55704] px-3.5 py-2 text-xs font-bold text-[#F8EADC] hover:bg-[#894603] whitespace-nowrap"
                   >
                     <Printer className="h-3.5 w-3.5" />
                     A4 Özet Çıktı
@@ -282,7 +282,7 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
               </section>
 
               {/* Sub-tab Segmented Bar */}
-              <div className="no-print flex flex-wrap gap-1.5 rounded-xl border border-slate-200 bg-white p-2">
+              <div className="no-print flex flex-wrap gap-1.5 rounded-xl border border-[#09251C]/10 bg-white p-2">
                 {[
                   { id: 'interactive', label: 'İnteraktif Laboratuvar & Bellek' },
                   { id: 'slides', label: `Görselli PDF Slaytları (${activeWeek.slides.length})` },
@@ -297,8 +297,8 @@ export const BM101Workspace: React.FC<BM101WorkspaceProps> = ({
                     onClick={() => setSubTab(tab.id as BM101SubTab)}
                     className={`rounded-lg px-3.5 py-2 text-xs font-bold transition-colors whitespace-nowrap ${
                       subTab === tab.id
-                        ? 'bg-[#0f2342] text-white'
-                        : 'text-slate-600 hover:bg-slate-100 hover:text-[#0f2342]'
+                        ? 'bg-[#09251C] text-[#F8EADC]'
+                        : 'text-slate-600 hover:bg-[#FAF6F0] hover:text-[#09251C]'
                     }`}
                   >
                     {tab.label}

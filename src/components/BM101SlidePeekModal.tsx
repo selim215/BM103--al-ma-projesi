@@ -62,7 +62,7 @@ export const BM101SlidePeekModal: React.FC<BM101SlidePeekModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/65 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#09251C]/65 p-4 backdrop-blur-sm"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -72,9 +72,9 @@ export const BM101SlidePeekModal: React.FC<BM101SlidePeekModalProps> = ({
         className="flex max-h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between gap-4 border-b-2 border-red-700 bg-[#0f2342] px-5 py-3.5 text-white">
+        <div className="flex items-center justify-between gap-4 border-b-2 border-[#A55704] bg-[#09251C] px-5 py-3.5 text-[#F8EADC]">
           <div className="min-w-0">
-            <div className="text-[11px] font-semibold text-red-300">
+            <div className="text-[11px] font-semibold text-[#F3D2AF]">
               {peek.pdfLabel} · PDF Sayfa {peek.slideNum}
             </div>
             <h3 id="bm101-peek-title" className="truncate text-base font-bold">
@@ -85,7 +85,7 @@ export const BM101SlidePeekModal: React.FC<BM101SlidePeekModalProps> = ({
             type="button"
             onClick={onClose}
             aria-label="Kapat"
-            className="shrink-0 rounded-lg p-1.5 text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+            className="shrink-0 rounded-lg p-1.5 text-[#F3D2AF] transition-colors hover:bg-white/10 hover:text-[#F8EADC]"
           >
             <X className="h-5 w-5" />
           </button>
@@ -104,8 +104,8 @@ export const BM101SlidePeekModal: React.FC<BM101SlidePeekModalProps> = ({
           <div className="space-y-4">
             {matchedSlide ? (
               <>
-                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                  <div className="mb-1.5 text-xs font-extrabold uppercase tracking-wide text-[#0f2342]">
+                <div className="rounded-xl border border-slate-200 bg-[#FAF6F0] p-4">
+                  <div className="mb-1.5 text-xs font-extrabold uppercase tracking-wide text-[#09251C]">
                     Slayt Açıklaması
                   </div>
                   <p className="text-sm leading-relaxed text-slate-700">
@@ -129,7 +129,7 @@ export const BM101SlidePeekModal: React.FC<BM101SlidePeekModalProps> = ({
 
                 {matchedSlide.codeSnippet && (
                   <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 text-slate-100">
-                    <div className="mb-2 flex items-center gap-1.5 text-xs font-bold text-sky-300">
+                    <div className="mb-2 flex items-center gap-1.5 text-xs font-bold text-[#F3D2AF]">
                       <Code2 className="h-3.5 w-3.5" />
                       İlgili C Kodu
                     </div>
@@ -140,14 +140,14 @@ export const BM101SlidePeekModal: React.FC<BM101SlidePeekModalProps> = ({
                 )}
               </>
             ) : (
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700">
+              <div className="rounded-xl border border-slate-200 bg-[#FAF6F0] p-4 text-sm leading-relaxed text-slate-700">
                 Bu PDF sayfasının birebir orijinal görünümü solda yer almaktadır. Hafta içi slayt okuyucudan ilgili dersin özet ve çözümlerini inceleyebilirsiniz.
               </div>
             )}
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 bg-slate-50 px-5 py-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 bg-[#FAF6F0] px-5 py-3">
           <span className="text-xs text-slate-500">
             Kaynak: {peek.pdfLabel} (Yalnızca BM101 arşivi)
           </span>
@@ -166,7 +166,7 @@ export const BM101SlidePeekModal: React.FC<BM101SlidePeekModalProps> = ({
                   onClose();
                   onOpenFullReader(matchedWeek.id, matchedIdx);
                 }}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#0f2342] px-3.5 py-1.5 text-xs font-bold text-white hover:bg-[#1a3664]"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#09251C] px-3.5 py-1.5 text-xs font-bold text-[#F8EADC] hover:bg-[#0f3a2c]"
               >
                 <BookOpen className="h-3.5 w-3.5" />
                 Slayt Okuyucuda Aç

@@ -27,9 +27,9 @@ export const ScrollToTopButton: React.FC = () => {
       title="En üste çık"
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
-      className={`no-print fixed bottom-5 right-5 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300/80 bg-white/80 text-[#0f2342] shadow-sm backdrop-blur-sm transition-all duration-200 focus:outline-none ${
+      className={`no-print fixed bottom-5 right-5 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-[#A55704]/30 bg-[#F8EADC]/90 text-[#09251C] shadow-sm backdrop-blur-sm transition-all duration-200 focus:outline-none ${
         visible
-          ? 'translate-y-0 opacity-40 hover:scale-105 hover:border-[#0f2342]/40 hover:bg-white hover:opacity-95 hover:shadow-md focus:opacity-100'
+          ? 'translate-y-0 opacity-50 hover:scale-105 hover:border-[#A55704]/60 hover:bg-white hover:opacity-95 hover:shadow-md focus:opacity-100'
           : 'pointer-events-none translate-y-2 opacity-0'
       }`}
     >
@@ -69,14 +69,14 @@ export const SehaFooter: React.FC<SehaFooterProps> = ({
         <div
           className={`mb-3 w-full max-w-xs rounded-xl border p-4 text-left shadow-xl transition-all ${
             variant === 'dark'
-              ? 'border-slate-700 bg-slate-900 text-slate-100'
-              : 'border-slate-200 bg-white text-slate-800'
+              ? 'border-[#F3D2AF]/25 bg-[#09251C] text-[#F8EADC]'
+              : 'border-[#A55704]/25 bg-white text-[#09251C]'
           }`}
         >
           <div className="mb-2 flex items-center justify-between gap-2">
-            <div className="inline-flex items-center gap-1.5 text-xs font-extrabold tracking-tight text-sky-500">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span className={variant === 'dark' ? 'text-sky-300' : 'text-[#0f2342]'}>
+            <div className="inline-flex items-center gap-1.5 text-xs font-extrabold tracking-tight text-[#A55704]">
+              <Sparkles className={`h-3.5 w-3.5 ${variant === 'dark' ? 'text-[#F3D2AF]' : 'text-[#A55704]'}`} />
+              <span className={variant === 'dark' ? 'text-[#F3D2AF]' : 'text-[#09251C]'}>
                 seha design · İletişim
               </span>
             </div>
@@ -105,17 +105,17 @@ export const SehaFooter: React.FC<SehaFooterProps> = ({
           <div
             className={`mt-2.5 flex items-center justify-between gap-2 rounded-lg border px-2.5 py-2 ${
               variant === 'dark'
-                ? 'border-slate-700 bg-slate-950/70'
-                : 'border-slate-200 bg-slate-50'
+                ? 'border-[#F3D2AF]/20 bg-[#061812]'
+                : 'border-[#A55704]/20 bg-[#FAF6F0]'
             }`}
           >
             <a
               href={`mailto:${FEEDBACK_EMAIL}?subject=BM101%20/%20BM103%20Geri%20Bildirimi`}
               className={`inline-flex min-w-0 items-center gap-1.5 truncate font-mono text-[11px] font-semibold underline-offset-2 hover:underline ${
-                variant === 'dark' ? 'text-sky-300' : 'text-[#0f2342]'
+                variant === 'dark' ? 'text-[#F3D2AF]' : 'text-[#09251C]'
               }`}
             >
-              <Mail className="h-3.5 w-3.5 shrink-0 text-red-600" />
+              <Mail className={`h-3.5 w-3.5 shrink-0 ${variant === 'dark' ? 'text-[#F3D2AF]' : 'text-[#A55704]'}`} />
               <span className="truncate">{FEEDBACK_EMAIL}</span>
             </a>
 
@@ -126,8 +126,8 @@ export const SehaFooter: React.FC<SehaFooterProps> = ({
                 copied
                   ? 'bg-emerald-600 text-white'
                   : variant === 'dark'
-                  ? 'bg-slate-800 text-slate-200 hover:bg-slate-700'
-                  : 'border border-slate-300 bg-white text-[#0f2342] hover:bg-slate-100'
+                  ? 'bg-[#A55704] text-[#F8EADC] hover:bg-[#894603]'
+                  : 'border border-[#09251C]/20 bg-white text-[#09251C] hover:bg-[#F8EADC]'
               }`}
             >
               {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
@@ -143,8 +143,8 @@ export const SehaFooter: React.FC<SehaFooterProps> = ({
         title="Görüş, öneri ve geri bildirim için tıklayın"
         className={`cursor-pointer select-none rounded-full px-3 py-1 text-xs italic tracking-wide transition-all duration-300 focus:outline-none ${
           variant === 'dark'
-            ? 'text-slate-300 opacity-45 hover:bg-white/5 hover:text-sky-200 hover:opacity-100 hover:[text-shadow:0_0_12px_rgba(125,211,252,0.85)]'
-            : 'text-slate-400 opacity-50 hover:bg-sky-50/70 hover:text-[#0f2342] hover:opacity-100 hover:[text-shadow:0_0_10px_rgba(56,189,248,0.75)]'
+            ? 'text-[#F8EADC]/60 opacity-60 hover:bg-white/5 hover:text-[#F3D2AF] hover:opacity-100 hover:[text-shadow:0_0_12px_rgba(243,210,175,0.8)]'
+            : 'text-[#09251C]/50 opacity-60 hover:bg-[#F8EADC]/80 hover:text-[#09251C] hover:opacity-100 hover:[text-shadow:0_0_10px_rgba(165,87,4,0.35)]'
         }`}
       >
         seha design

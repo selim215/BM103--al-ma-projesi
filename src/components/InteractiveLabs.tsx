@@ -16,7 +16,7 @@ const SlideRefButton: React.FC<{
   <button
     type="button"
     onClick={() => onPeekSlide(weekId, slideNum)}
-    className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-slate-100 px-2.5 py-1 text-xs font-semibold text-[#0f2342] transition-colors hover:bg-[#0f2342] hover:text-white whitespace-nowrap shrink-0"
+    className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-[#FAF6F0] px-2.5 py-1 text-xs font-semibold text-[#09251C] transition-colors hover:bg-[#09251C] hover:text-[#F8EADC] whitespace-nowrap shrink-0"
   >
     <BookOpen className="h-3.5 w-3.5" />
     PDF Sayfa {slideNum}
@@ -66,7 +66,7 @@ const LabW0: React.FC<{
     <div className="space-y-5">
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             BM103 Ders Bilgileri ve Değerlendirme Ölçütleri
           </h2>
           <SlideRefButton weekId="w1" slideNum={2} onPeekSlide={onPeekSlide} />
@@ -75,16 +75,16 @@ const LabW0: React.FC<{
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div className="space-y-3 text-sm text-slate-700">
             <div>
-              <div className="font-bold text-[#0f2342]">Ders Sorumlusu</div>
+              <div className="font-bold text-[#09251C]">Ders Sorumlusu</div>
               <div>Doç. Dr. Feyza YILDIRIM OKAY · <code>feyzaokay@gazi.edu.tr</code> · Oda: 137</div>
             </div>
             <div>
-              <div className="font-bold text-[#0f2342]">Dersin Asistanı</div>
+              <div className="font-bold text-[#09251C]">Dersin Asistanı</div>
               <div>Arş. Gör. Zeynep Sözen · <code>zeynepsozen@gazi.edu.tr</code> · Oda: Z-26</div>
             </div>
             <div>
-              <div className="font-bold text-[#0f2342]">Ders Araçları Sınıf Kodu</div>
-              <code className="inline-block rounded bg-red-50 px-2.5 py-1 text-sm font-bold text-red-800">
+              <div className="font-bold text-[#09251C]">Ders Araçları Sınıf Kodu</div>
+              <code className="inline-block rounded bg-[#F8EADC] px-2.5 py-1 text-sm font-bold text-[#A55704]">
                 xkfuqz5g
               </code>
             </div>
@@ -93,7 +93,7 @@ const LabW0: React.FC<{
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-[#0f2342] text-white">
+                <tr className="bg-[#09251C] text-white">
                   <th className="border border-slate-300 px-3 py-2 text-left">Ölçüt</th>
                   <th className="border border-slate-300 px-3 py-2 text-left">Pay / Şart</th>
                 </tr>
@@ -123,7 +123,7 @@ const LabW0: React.FC<{
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             Ders Kitabı, Yardımcı Kaynaklar ve İzlence Başlıkları
           </h2>
           <SlideRefButton weekId="w1" slideNum={3} onPeekSlide={onPeekSlide} />
@@ -145,10 +145,10 @@ const LabW0: React.FC<{
                 key={idx}
                 type="button"
                 onClick={() => onJumpToWeek(item.targetWeek!)}
-                className="flex min-w-0 items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-left text-xs font-semibold text-[#0f2342] transition-colors hover:border-[#0f2342] hover:bg-white"
+                className="flex min-w-0 items-center justify-between rounded-lg border border-slate-200 bg-[#FAF6F0] px-3.5 py-2.5 text-left text-xs font-semibold text-[#09251C] transition-colors hover:border-[#09251C] hover:bg-white"
               >
                 <span className="min-w-0">{idx + 1}. {item.title}</span>
-                <span className="ml-2 shrink-0 text-[11px] font-bold text-red-700">{item.tag} →</span>
+                <span className="ml-2 shrink-0 text-[11px] font-bold text-[#A55704]">{item.tag} →</span>
               </button>
             ) : (
               <div
@@ -243,7 +243,7 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
     <div className="space-y-5">
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             1. İnteraktif Kuşaklar Zaman Tüneli
           </h2>
           <SlideRefButton weekId="w2" slideNum={g.slide} onPeekSlide={onPeekSlide} />
@@ -252,7 +252,7 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           Bir dönem seçerek o kuşağın teknolojisini, ilk modellerini ve ayırt edici özelliklerini inceleyin:
         </p>
 
-        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">
+        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-[#F5ECE0] p-1.5">
           {[
             { id: '0', label: 'Bilgisayar Öncesi' },
             { id: '1', label: '1. Kuşak (Vakum Tüp)' },
@@ -267,7 +267,7 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               onClick={() => setGenFilter(tab.id as '0' | '1' | '2' | '3' | '4' | '5')}
               className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap ${
                 genFilter === tab.id
-                  ? 'bg-white text-[#0f2342] shadow-sm'
+                  ? 'bg-white text-[#09251C] shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -277,7 +277,7 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-          <h3 className="text-base font-bold text-[#0f2342]">{g.title}</h3>
+          <h3 className="text-base font-bold text-[#09251C]">{g.title}</h3>
           <ul className="mt-2.5 list-disc space-y-1.5 pl-5 text-sm text-slate-700">
             {g.items.map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -288,27 +288,27 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             2. Bilgisayar Sisteminin 5 İşlevi ve Giriş–İşleme–Çıktı Akışı
           </h2>
           <SlideRefButton weekId="w2" slideNum={26} onPeekSlide={onPeekSlide} />
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <div className="text-sm font-bold text-[#0f2342]">1. Girdi İşlemleri</div>
+            <div className="text-sm font-bold text-[#09251C]">1. Girdi İşlemleri</div>
             <p className="mt-1.5 text-sm text-slate-600">
               Klavye, fare, tarayıcı, mikrofon, kamera gibi birimlerle verilerin bilgisayara girilmesi.
             </p>
           </div>
           <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <div className="text-sm font-bold text-[#0f2342]">2. İşleme (CPU & Bellek)</div>
+            <div className="text-sm font-bold text-[#09251C]">2. İşleme (CPU & Bellek)</div>
             <p className="mt-1.5 text-sm text-slate-600">
               <strong>Aritmetik İşlemler</strong> (çarpma, toplama, çıkarma, bölme, üs) +{' '}
               <strong>Koordinasyon ve Kontrol</strong> + <strong>Veri Saklama</strong> (RAM, HDD/SSD).
             </p>
           </div>
           <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <div className="text-sm font-bold text-[#0f2342]">3. Çıktı İşlemleri</div>
+            <div className="text-sm font-bold text-[#09251C]">3. Çıktı İşlemleri</div>
             <p className="mt-1.5 text-sm text-slate-600">
               Ekran (Monitör), Yazıcı, Çizici (Plotter), Hoparlör, Sunu Cihazı ile rapor/grafik/ses görüntüsü oluşturma.
             </p>
@@ -318,17 +318,17 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             3. Donanım ve Yazılım Bileşenleri Haritası
           </h2>
           <SlideRefButton weekId="w2" slideNum={29} onPeekSlide={onPeekSlide} />
         </div>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           <div className="min-w-0 overflow-x-auto">
-            <h3 className="mb-2 text-sm font-bold text-red-700">Donanım (Hardware)</h3>
+            <h3 className="mb-2 text-sm font-bold text-[#A55704]">Donanım (Hardware)</h3>
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-[#0f2342] text-white">
+                <tr className="bg-[#09251C] text-white">
                   <th className="border border-slate-300 px-3 py-2 text-left">Kategori</th>
                   <th className="border border-slate-300 px-3 py-2 text-left">Birimler ve Kritik Notlar</th>
                 </tr>
@@ -357,10 +357,10 @@ const LabW1: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           </div>
 
           <div className="min-w-0 overflow-x-auto">
-            <h3 className="mb-2 text-sm font-bold text-[#0f2342]">Yazılım (Software)</h3>
+            <h3 className="mb-2 text-sm font-bold text-[#09251C]">Yazılım (Software)</h3>
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-[#0f2342] text-white">
+                <tr className="bg-[#09251C] text-white">
                   <th className="border border-slate-300 px-3 py-2 text-left">Kategori</th>
                   <th className="border border-slate-300 px-3 py-2 text-left">Örnekler (PDF Sayfalarından)</th>
                 </tr>
@@ -453,13 +453,13 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
     <div className="space-y-5">
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             1. İnteraktif Lojik Kapı ve Doğruluk Tablosu Simülatörü
           </h2>
           <SlideRefButton weekId="w3" slideNum={7} onPeekSlide={onPeekSlide} />
         </div>
 
-        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">
+        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-[#F5ECE0] p-1.5">
           {(['AND', 'OR', 'NOT', 'NAND', 'NOR', 'XOR', 'XNOR'] as GateType[]).map((g) => (
             <button
               key={g}
@@ -467,8 +467,8 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               onClick={() => setGateType(g)}
               className={`rounded-md px-3.5 py-1.5 font-mono text-xs font-bold transition-colors whitespace-nowrap ${
                 gateType === g
-                  ? 'bg-[#0f2342] text-white'
-                  : 'text-slate-700 hover:bg-white hover:text-[#0f2342]'
+                  ? 'bg-[#09251C] text-white'
+                  : 'text-slate-700 hover:bg-white hover:text-[#09251C]'
               }`}
             >
               {g}
@@ -480,7 +480,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <div>
             <div className="mb-3 text-sm">
               <strong>Denklem:</strong>{' '}
-              <code className="rounded bg-white px-2 py-0.5 font-mono font-bold text-[#0f2342]">
+              <code className="rounded bg-white px-2 py-0.5 font-mono font-bold text-[#09251C]">
                 {gateEquations[gateType]}
               </code>
             </div>
@@ -494,7 +494,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                   className={`h-10 w-14 rounded-lg border-2 font-mono text-base font-extrabold transition-colors ${
                     gateA
                       ? 'border-emerald-700 bg-emerald-700 text-white'
-                      : 'border-[#0f2342] bg-white text-[#0f2342]'
+                      : 'border-[#09251C] bg-white text-[#09251C]'
                   }`}
                 >
                   {gateA}
@@ -510,7 +510,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                     className={`h-10 w-14 rounded-lg border-2 font-mono text-base font-extrabold transition-colors ${
                       gateB
                         ? 'border-emerald-700 bg-emerald-700 text-white'
-                        : 'border-[#0f2342] bg-white text-[#0f2342]'
+                        : 'border-[#09251C] bg-white text-[#09251C]'
                     }`}
                   >
                     {gateB}
@@ -551,7 +551,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                 stroke={gateA ? '#047857' : '#64748b'}
                 strokeWidth="3"
               />
-              <text x="6" y="25" fontSize="12" fontWeight="bold" fill="#0f2342">
+              <text x="6" y="25" fontSize="12" fontWeight="bold" fill="#09251C">
                 A={gateA}
               </text>
               {!isNot && (
@@ -564,7 +564,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                     stroke={gateB ? '#047857' : '#64748b'}
                     strokeWidth="3"
                   />
-                  <text x="6" y="81" fontSize="12" fontWeight="bold" fill="#0f2342">
+                  <text x="6" y="81" fontSize="12" fontWeight="bold" fill="#09251C">
                     B={gateB}
                   </text>
                 </>
@@ -575,18 +575,18 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                 width="96"
                 height="64"
                 rx="12"
-                fill="#eff4fb"
-                stroke="#0f2342"
+                fill="#F8EADC"
+                stroke="#09251C"
                 strokeWidth="2.5"
               />
-              <text x="120" y="53" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#0f2342">
+              <text x="120" y="53" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#09251C">
                 {gateType}
               </text>
               {(gateType === 'NOT' ||
                 gateType === 'NAND' ||
                 gateType === 'NOR' ||
                 gateType === 'XNOR') && (
-                <circle cx="174" cy="48" r="5" fill="#fff" stroke="#b91c1c" strokeWidth="2.5" />
+                <circle cx="174" cy="48" r="5" fill="#fff" stroke="#A55704" strokeWidth="2.5" />
               )}
               <line
                 x1="179"
@@ -611,7 +611,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <div className="overflow-x-auto">
             <table className="w-full border-collapse bg-white font-mono text-sm tabular-nums">
               <thead>
-                <tr className="bg-[#0f2342] text-white">
+                <tr className="bg-[#09251C] text-white">
                   <th className="border border-slate-300 px-3 py-2 text-left">A</th>
                   {!isNot && <th className="border border-slate-300 px-3 py-2 text-left">B</th>}
                   <th className="border border-slate-300 px-3 py-2 text-left">Çıkış Z</th>
@@ -642,15 +642,15 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             2. İnteraktif Tabanlar Dönüştürücü (0–15)
           </h2>
           <SlideRefButton weekId="w3" slideNum={5} onPeekSlide={onPeekSlide} />
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-          <label className="block text-sm font-bold text-[#0f2342]" htmlFor="dec-slider">
-            Onluk (Decimal) Değer: <span className="font-mono text-red-700">{decVal}</span> (0–15 arası)
+          <label className="block text-sm font-bold text-[#09251C]" htmlFor="dec-slider">
+            Onluk (Decimal) Değer: <span className="font-mono text-[#A55704]">{decVal}</span> (0–15 arası)
           </label>
           <input
             id="dec-slider"
@@ -659,20 +659,20 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
             max={15}
             value={decVal}
             onChange={(e) => setDecVal(parseInt(e.target.value, 10))}
-            className="my-3 w-full max-w-md accent-[#0f2342]"
+            className="my-3 w-full max-w-md accent-[#09251C]"
           />
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-mono text-sm tabular-nums">
               <span className="text-slate-600">Onluk (Base 10)</span>
-              <strong className="text-[#0f2342]">{decVal}</strong>
+              <strong className="text-[#09251C]">{decVal}</strong>
             </div>
             <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-mono text-sm tabular-nums">
               <span className="text-slate-600">İkilik (Base 2)</span>
-              <strong className="text-[#0f2342]">{bin4}</strong>
+              <strong className="text-[#09251C]">{bin4}</strong>
             </div>
             <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-mono text-sm tabular-nums">
               <span className="text-slate-600">Sekizlik / Onaltılık</span>
-              <strong className="text-[#0f2342]">
+              <strong className="text-[#09251C]">
                 {oct} / {hex}
               </strong>
             </div>
@@ -682,7 +682,7 @@ const LabW2: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             3. Boole İndirgeme Çözüm Adımları ve Karnaugh Diyagramı
           </h2>
           <SlideRefButton weekId="w3" slideNum={20} onPeekSlide={onPeekSlide} />
@@ -775,7 +775,7 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
     <div className="space-y-5">
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             1. Akış Şeması 8 Standart Sembolü
           </h2>
           <SlideRefButton weekId="w4" slideNum={9} onPeekSlide={onPeekSlide} />
@@ -785,7 +785,7 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <div className="min-w-0 overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-[#0f2342] text-white">
+                <tr className="bg-[#09251C] text-white">
                   <th className="border border-slate-300 px-3 py-2 text-left">Sembol Adı</th>
                   <th className="border border-slate-300 px-3 py-2 text-left">İşlevi (Sayfa 9)</th>
                 </tr>
@@ -814,7 +814,7 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           <div className="min-w-0 overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-[#0f2342] text-white">
+                <tr className="bg-[#09251C] text-white">
                   <th className="border border-slate-300 px-3 py-2 text-left">Sembol Adı</th>
                   <th className="border border-slate-300 px-3 py-2 text-left">İşlevi (Sayfa 9)</th>
                 </tr>
@@ -844,13 +844,13 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             2. İnteraktif Algoritma Adım İzleyici
           </h2>
           <SlideRefButton weekId="w4" slideNum={tr.slide} onPeekSlide={onPeekSlide} />
         </div>
 
-        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">
+        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-[#F5ECE0] p-1.5">
           {[
             { id: 'sum20', label: '1–20 Toplamı' },
             { id: 'fact', label: 'N! Faktöriyel' },
@@ -865,7 +865,7 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               }}
               className={`rounded-md px-3.5 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap ${
                 algoExample === ex.id
-                  ? 'bg-white text-[#0f2342] shadow-sm'
+                  ? 'bg-white text-[#09251C] shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -876,7 +876,7 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-            <strong className="text-sm text-[#0f2342]">{tr.title}</strong>
+            <strong className="text-sm text-[#09251C]">{tr.title}</strong>
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -890,7 +890,7 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               <button
                 type="button"
                 onClick={() => setAlgoStep((s) => (s + 1) % tr.steps.length)}
-                className="inline-flex items-center gap-1 rounded-lg bg-[#0f2342] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1a3664] whitespace-nowrap"
+                className="inline-flex items-center gap-1 rounded-lg bg-[#09251C] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#0f3a2c] whitespace-nowrap"
               >
                 Sonraki Adım
                 <ChevronRight className="h-3.5 w-3.5" />
@@ -914,7 +914,7 @@ const LabW3: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                 onClick={() => setAlgoStep(idx)}
                 className={`block w-full rounded-lg border px-3.5 py-2 text-left font-mono text-xs transition-colors ${
                   idx === safeStep
-                    ? 'border-[#0f2342] bg-[#0f2342] font-bold text-white'
+                    ? 'border-[#09251C] bg-[#09251C] font-bold text-white'
                     : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
                 }`}
               >
@@ -961,13 +961,13 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
     <div className="space-y-5">
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             1. Aynı Problem (1&apos;den 5&apos;e Toplam), 4 Farklı Paradigma
           </h2>
           <SlideRefButton weekId="w6" slideNum={17} onPeekSlide={onPeekSlide} />
         </div>
 
-        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">
+        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-[#F5ECE0] p-1.5">
           {[
             { id: 'emirsel', label: 'Emirsel' },
             { id: 'bildirimsel', label: 'Bildirimsel (SQL)' },
@@ -980,7 +980,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               onClick={() => setParadigm(p.id as 'emirsel' | 'bildirimsel' | 'fonksiyonel' | 'oop')}
               className={`rounded-md px-3.5 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap ${
                 paradigm === p.id
-                  ? 'bg-white text-[#0f2342] shadow-sm'
+                  ? 'bg-white text-[#09251C] shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -990,7 +990,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-          <div className="mb-2 text-sm font-bold text-[#0f2342]">{pc.title}</div>
+          <div className="mb-2 text-sm font-bold text-[#09251C]">{pc.title}</div>
           <pre className="overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100">
             {pc.code}
           </pre>
@@ -999,7 +999,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             2. Bir Programın Yolculuğu ve Hibrit Java Akışı
           </h2>
           <SlideRefButton weekId="w6" slideNum={35} onPeekSlide={onPeekSlide} />
@@ -1011,13 +1011,13 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               Derlenen Programın Yolculuğu (Sayfa 37)
             </div>
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-              <span className="rounded-lg bg-[#0f2342] px-3 py-1.5 text-white">1. Editör (toplama.c)</span>
+              <span className="rounded-lg bg-[#09251C] px-3 py-1.5 text-white">1. Editör (toplama.c)</span>
               <span className="text-slate-400">→</span>
-              <span className="rounded-lg bg-[#0f2342] px-3 py-1.5 text-white">2. Derleyici (toplama.o)</span>
+              <span className="rounded-lg bg-[#09251C] px-3 py-1.5 text-white">2. Derleyici (toplama.o)</span>
               <span className="text-slate-400">→</span>
-              <span className="rounded-lg bg-[#0f2342] px-3 py-1.5 text-white">3. Bağlayıcı / Linker (+ Kütüphane) → toplama.exe</span>
+              <span className="rounded-lg bg-[#09251C] px-3 py-1.5 text-white">3. Bağlayıcı / Linker (+ Kütüphane) → toplama.exe</span>
               <span className="text-slate-400">→</span>
-              <span className="rounded-lg bg-[#0f2342] px-3 py-1.5 text-white">4. Hata Ayıklayıcı (Debugger)</span>
+              <span className="rounded-lg bg-[#09251C] px-3 py-1.5 text-white">4. Hata Ayıklayıcı (Debugger)</span>
             </div>
           </div>
 
@@ -1042,7 +1042,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             3. İnteraktif OOP Laboratuvarı: Kapsülleme ve Çok Biçimlilik
           </h2>
           <SlideRefButton weekId="w6" slideNum={45} onPeekSlide={onPeekSlide} />
@@ -1079,7 +1079,7 @@ const LabW4: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                   'Çok Biçimlilik (Sayfa 47): for (Animal a : hayvanlar) a.makeSound(); → Dog: "Hav hav!" | Cat: "Miyav!" (Doğru davranışı nesnenin kendisi seçer).'
                 )
               }
-              className="rounded-lg bg-[#0f2342] px-3.5 py-2 font-mono text-xs font-bold text-white transition-colors hover:bg-[#1a3664] whitespace-nowrap"
+              className="rounded-lg bg-[#09251C] px-3.5 py-2 font-mono text-xs font-bold text-white transition-colors hover:bg-[#0f3a2c] whitespace-nowrap"
             >
               hayvanlar.makeSound();
             </button>
@@ -1113,7 +1113,7 @@ const LabW5: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
     <div className="space-y-5">
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             1. İnteraktif Proses Durum Modeli Simülatörü
           </h2>
           <SlideRefButton weekId="w5" slideNum={35} onPeekSlide={onPeekSlide} />
@@ -1149,7 +1149,7 @@ const LabW5: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                 setProcState('calisir');
                 setProcLog("3. Prosesin tekrar sırası gelmiş, CPU'yu kullanabilir (Hazır → Çalışır).");
               }}
-              className="rounded-lg bg-[#0f2342] px-3 py-2 text-xs font-semibold text-white hover:bg-[#1a3664] disabled:cursor-not-allowed disabled:opacity-40 whitespace-nowrap"
+              className="rounded-lg bg-[#09251C] px-3 py-2 text-xs font-semibold text-white hover:bg-[#0f3a2c] disabled:cursor-not-allowed disabled:opacity-40 whitespace-nowrap"
             >
               3: Sırası Geldi (Hazır → Çalışır)
             </button>
@@ -1218,7 +1218,7 @@ const LabW5: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             2. Yarış Yönetimi ve Kilitlenme (Deadlock — Coffman Koşulları)
           </h2>
           <SlideRefButton weekId="w5" slideNum={42} onPeekSlide={onPeekSlide} />
@@ -1226,7 +1226,7 @@ const LabW5: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div>
-            <div className="mb-2 text-sm font-bold text-[#0f2342]">
+            <div className="mb-2 text-sm font-bold text-[#09251C]">
               4 Coffman Koşulu (Hepsi aynı anda oluşursa Deadlock meydana gelir):
             </div>
             <ol className="list-decimal space-y-1.5 pl-5 text-sm text-slate-700">
@@ -1246,7 +1246,7 @@ const LabW5: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           </div>
 
           <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-            <div className="text-sm font-bold text-[#0f2342]">Sayfa 43 Kilitlenme Senaryosu</div>
+            <div className="text-sm font-bold text-[#09251C]">Sayfa 43 Kilitlenme Senaryosu</div>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
               <li>
                 <strong>Resource 1</strong> → <em>Assigned to</em> → <strong>Process 1</strong>
@@ -1354,7 +1354,7 @@ const LabW6: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
     <div className="space-y-5">
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             1. İnteraktif Sanal Makine (Ek-C) Çalıştırıcısı
           </h2>
           <SlideRefButton weekId="w7" slideNum={40} onPeekSlide={onPeekSlide} />
@@ -1400,7 +1400,7 @@ const LabW6: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
                 type="button"
                 onClick={() => setVmStep((s) => Math.min(5, s + 1))}
                 disabled={vmStep >= 5}
-                className="inline-flex items-center gap-1 rounded-lg bg-[#0f2342] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1a3664] disabled:opacity-40 whitespace-nowrap"
+                className="inline-flex items-center gap-1 rounded-lg bg-[#09251C] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#0f3a2c] disabled:opacity-40 whitespace-nowrap"
               >
                 Sonraki Döngü Adımı
                 <ChevronRight className="h-3.5 w-3.5" />
@@ -1489,13 +1489,13 @@ const LabW6: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             2. Adresleme Modları Gezgini
           </h2>
           <SlideRefButton weekId="w7" slideNum={20} onPeekSlide={onPeekSlide} />
         </div>
 
-        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-slate-100 p-1.5">
+        <div className="mb-4 flex flex-wrap gap-1.5 rounded-lg bg-[#F5ECE0] p-1.5">
           {Object.keys(addrModes).map((m) => (
             <button
               key={m}
@@ -1503,7 +1503,7 @@ const LabW6: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
               onClick={() => setBusMode(m)}
               className={`rounded-md px-3.5 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap ${
                 busMode === m
-                  ? 'bg-white text-[#0f2342] shadow-sm'
+                  ? 'bg-white text-[#09251C] shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -1512,9 +1512,9 @@ const LabW6: React.FC<{ onPeekSlide: (w: string, s: number) => void }> = ({ onPe
           ))}
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm">
-          <strong className="text-[#0f2342]">{busMode} Adresleme:</strong>{' '}
-          <code className="mx-1 rounded bg-white px-2 py-0.5 font-mono font-bold text-red-700">
+        <div className="rounded-xl border border-slate-200 bg-[#FAF6F0] p-4 text-sm">
+          <strong className="text-[#09251C]">{busMode} Adresleme:</strong>{' '}
+          <code className="mx-1 rounded bg-white px-2 py-0.5 font-mono font-bold text-[#A55704]">
             {addrModes[busMode].cmd}
           </code>{' '}
           — {addrModes[busMode].desc}

@@ -170,16 +170,16 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
     return (
       <div className="space-y-6">
         <section className="rounded-xl border border-slate-200 bg-white p-6">
-          <h1 className="text-xl font-extrabold text-[#0f2342]">
+          <h1 className="text-xl font-extrabold text-[#09251C]">
             Vize Sınav Merkezi — Hocanın Soru Metodlarına Özel 3 Vize Senaryosu
           </h1>
           <p className="mt-1.5 text-sm text-slate-600">
             Üç senaryonun tamamı dersin vize metodolojisine uygun olarak{' '}
-            <strong className="text-[#0f2342]">Doğru / Yanlış</strong>,{' '}
-            <strong className="text-[#0f2342]">Test</strong> ve{' '}
-            <strong className="text-[#0f2342]">Klasik</strong> bölümlerinden oluşur. Tarih ezberi yerine{' '}
-            <strong className="text-[#0f2342]">ilkler</strong>, işlem yerine{' '}
-            <strong className="text-[#0f2342]">sözel Minterm/Maxterm</strong> ve hem sözel hem sayısal sorular içerir.
+            <strong className="text-[#09251C]">Doğru / Yanlış</strong>,{' '}
+            <strong className="text-[#09251C]">Test</strong> ve{' '}
+            <strong className="text-[#09251C]">Klasik</strong> bölümlerinden oluşur. Tarih ezberi yerine{' '}
+            <strong className="text-[#09251C]">ilkler</strong>, işlem yerine{' '}
+            <strong className="text-[#09251C]">sözel Minterm/Maxterm</strong> ve hem sözel hem sayısal sorular içerir.
           </p>
         </section>
 
@@ -190,16 +190,16 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
             return (
               <article
                 key={sc.id}
-                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 transition-colors hover:border-[#0f2342]"
+                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 transition-colors hover:border-[#09251C]"
               >
                 <div>
                   <div className="mb-2 flex items-center justify-between gap-2 text-xs font-bold">
-                    <span className="text-red-700">{sc.badge}</span>
+                    <span className="text-[#A55704]">{sc.badge}</span>
                     <span className="font-mono text-slate-500 tabular-nums">
                       {sc.questions.length} Soru · {sc.durationMin} Dk
                     </span>
                   </div>
-                  <h2 className="text-lg font-extrabold text-[#0f2342]">{sc.title}</h2>
+                  <h2 className="text-lg font-extrabold text-[#09251C]">{sc.title}</h2>
                   <div className="mt-2 text-xs font-semibold text-slate-700">
                     {sc.formatSummary} · Toplam {totalPts} Puan
                   </div>
@@ -218,7 +218,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                   <button
                     type="button"
                     onClick={() => startScenario(sc)}
-                    className="w-full rounded-lg bg-[#0f2342] px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1a3664] whitespace-nowrap"
+                    className="w-full rounded-lg bg-[#09251C] px-4 py-2.5 text-sm font-bold text-[#F8EADC] transition-colors hover:bg-[#0f3a2c] whitespace-nowrap"
                   >
                     {past ? 'Sınavı Yeniden Başlat' : 'Sınava Başla'}
                   </button>
@@ -330,8 +330,8 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
       <section className="rounded-xl border border-slate-200 bg-white p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <div className="text-xs font-bold text-red-700">{activeScenario.badge}</div>
-            <h1 className="text-lg font-extrabold text-[#0f2342]">{activeScenario.title}</h1>
+            <div className="text-xs font-bold text-[#A55704]">{activeScenario.badge}</div>
+            <h1 className="text-lg font-extrabold text-[#09251C]">{activeScenario.title}</h1>
             <div className="mt-0.5 text-xs font-medium text-slate-500">
               {activeScenario.formatSummary}
             </div>
@@ -343,7 +343,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                 className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 font-mono text-sm font-bold tabular-nums ${
                   timeLeftSec <= 120
                     ? 'border-red-300 bg-red-50 text-red-800'
-                    : 'border-slate-200 bg-slate-50 text-[#0f2342]'
+                    : 'border-slate-200 bg-[#FAF6F0] text-[#09251C]'
                 }`}
               >
                 <Clock className="h-4 w-4" />
@@ -367,7 +367,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
               <button
                 type="button"
                 onClick={handleSubmitExam}
-                className="rounded-lg bg-red-700 px-4 py-1.5 text-xs font-bold text-white hover:bg-red-800 whitespace-nowrap"
+                className="rounded-lg bg-[#A55704] px-4 py-1.5 text-xs font-bold text-[#F8EADC] hover:bg-[#894603] whitespace-nowrap"
               >
                 Sınavı Bitir ({answeredCount}/{totalQ})
               </button>
@@ -375,7 +375,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
               <button
                 type="button"
                 onClick={() => startScenario(activeScenario)}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#0f2342] px-3.5 py-1.5 text-xs font-bold text-white hover:bg-[#1a3664] whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#09251C] px-3.5 py-1.5 text-xs font-bold text-[#F8EADC] hover:bg-[#0f3a2c] whitespace-nowrap"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
                 Tekrar Çöz
@@ -406,7 +406,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                 dotClass = 'border-red-700 bg-red-700 text-white';
               }
             } else if (isAns) {
-              dotClass = 'border-blue-600 bg-blue-50 font-bold text-[#0f2342]';
+              dotClass = 'border-[#A55704] bg-[#F8EADC] font-bold text-[#09251C]';
             }
 
             const shortType = item.kind === 'tf' ? 'D/Y' : item.kind === 'classic' ? 'K' : 'T';
@@ -421,7 +421,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                   setCurrentQ(idx);
                 }}
                 className={`inline-flex h-8 min-w-[2.4rem] items-center justify-center gap-1 rounded-lg border px-1.5 font-mono text-xs font-bold tabular-nums transition-all ${dotClass} ${
-                  isCur ? 'ring-2 ring-red-700 ring-offset-1' : ''
+                  isCur ? 'ring-2 ring-[#A55704] ring-offset-1' : ''
                 }`}
               >
                 <span>{idx + 1}</span>
@@ -439,7 +439,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
             <div className="flex flex-wrap items-center gap-6 font-mono text-sm tabular-nums">
               <div>
                 <span className="font-sans text-xs text-slate-500">Toplam Puan</span>
-                <div className="text-2xl font-extrabold text-[#0f2342]">
+                <div className="text-2xl font-extrabold text-[#09251C]">
                   {totalEarned} / {totalPoints}
                 </div>
               </div>
@@ -453,7 +453,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
               </div>
               <div>
                 <span className="font-sans text-xs text-slate-500">Klasik (Tam / Yarım / 0)</span>
-                <div className="text-lg font-bold text-[#0f2342]">
+                <div className="text-lg font-bold text-[#09251C]">
                   {classicFull} / {classicPartial} / {classicZero}
                 </div>
               </div>
@@ -462,7 +462,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
             <button
               type="button"
               onClick={() => setViewAllReview((v) => !v)}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-slate-50 px-3.5 py-2 text-xs font-bold text-[#0f2342] hover:bg-slate-100 whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-[#FAF6F0] px-3.5 py-2 text-xs font-bold text-[#09251C] hover:bg-[#F8EADC] whitespace-nowrap"
             >
               <ListChecks className="h-4 w-4" />
               {viewAllReview ? 'Tek Tek Soru Görünümü' : 'Tüm Çözümleri Listele'}
@@ -493,7 +493,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                       Soru {idx + 1} / {totalQ}
                     </span>
                     <span className="text-slate-300">·</span>
-                    <span className="text-[#0f2342]">{getKindLabel(item.kind)}</span>
+                    <span className="text-[#09251C]">{getKindLabel(item.kind)}</span>
                     <span className="text-slate-300">·</span>
                     <span className={isFull ? 'text-emerald-800' : isPartial ? 'text-amber-800' : 'text-red-800'}>
                       {earnedPts} / {item.points} Puan
@@ -502,14 +502,14 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                   <button
                     type="button"
                     onClick={() => onPeekSlideBySource(item.src)}
-                    className="inline-flex max-w-full items-center gap-1 rounded border border-slate-200 bg-white px-2.5 py-1 text-left text-xs font-semibold text-[#0f2342] hover:bg-slate-100 [overflow-wrap:anywhere]"
+                    className="inline-flex max-w-full items-center gap-1 rounded border border-slate-200 bg-white px-2.5 py-1 text-left text-xs font-semibold text-[#09251C] hover:bg-[#FAF6F0] [overflow-wrap:anywhere]"
                   >
                     <BookOpen className="h-3.5 w-3.5 shrink-0" />
                     {item.src}
                   </button>
                 </div>
 
-                <div className="mb-3 whitespace-pre-line text-[15px] font-bold text-[#0f2342] [overflow-wrap:anywhere]">
+                <div className="mb-3 whitespace-pre-line text-[15px] font-bold text-[#09251C] [overflow-wrap:anywhere]">
                   {item.q}
                 </div>
 
@@ -578,16 +578,16 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                 Soru {currentQ + 1} / {totalQ}
               </span>
               <span className="text-slate-300">·</span>
-              <span className="text-red-700">{getKindLabel(q.kind)}</span>
+              <span className="text-[#A55704]">{getKindLabel(q.kind)}</span>
               <span className="text-slate-300">·</span>
-              <span className="text-[#0f2342]">{q.points} Puan</span>
+              <span className="text-[#09251C]">{q.points} Puan</span>
             </div>
 
             {submitted ? (
               <button
                 type="button"
                 onClick={() => onPeekSlideBySource(q.src)}
-                className="inline-flex max-w-full items-center gap-1 rounded border border-slate-200 bg-slate-50 px-2.5 py-1 text-left text-xs font-semibold text-[#0f2342] hover:bg-slate-100 [overflow-wrap:anywhere]"
+                className="inline-flex max-w-full items-center gap-1 rounded border border-slate-200 bg-[#FAF6F0] px-2.5 py-1 text-left text-xs font-semibold text-[#09251C] hover:bg-[#F8EADC] [overflow-wrap:anywhere]"
               >
                 <BookOpen className="h-3.5 w-3.5 shrink-0" />
                 {q.src}
@@ -597,7 +597,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
             )}
           </div>
 
-          <h2 className="mb-4 whitespace-pre-line text-base font-bold leading-snug text-[#0f2342] [overflow-wrap:anywhere]">
+          <h2 className="mb-4 whitespace-pre-line text-base font-bold leading-snug text-[#09251C] [overflow-wrap:anywhere]">
             {q.q}
           </h2>
 
@@ -620,7 +620,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                     setClassicAnswers((prev) => ({ ...prev, [currentQ]: e.target.value }))
                   }
                   placeholder="Cevabınızı buraya yazınız..."
-                  className="w-full rounded-lg border border-slate-300 bg-slate-50/40 p-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#0f2342] focus:bg-white focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 bg-[#FAF6F0]/60 p-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#09251C] focus:bg-white focus:outline-none"
                 />
               </div>
             )
@@ -640,8 +640,8 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                         : showBad
                         ? 'border-red-400 bg-red-50 text-red-950'
                         : isChosen
-                        ? 'border-[#0f2342] bg-slate-100 font-semibold text-[#0f2342]'
-                        : 'border-slate-200 bg-white text-slate-800 hover:bg-slate-50'
+                        ? 'border-[#09251C] bg-[#F8EADC]/60 font-semibold text-[#09251C]'
+                        : 'border-slate-200 bg-white text-slate-800 hover:bg-[#FAF6F0]'
                     } ${submitted ? 'cursor-default' : ''}`}
                   >
                     <input
@@ -652,7 +652,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
                       onChange={() =>
                         setChoiceAnswers((prev) => ({ ...prev, [currentQ]: oIdx }))
                       }
-                      className="mt-0.5 accent-[#0f2342]"
+                      className="mt-0.5 accent-[#09251C]"
                     />
                     <span className="min-w-0 [overflow-wrap:anywhere]">
                       {q.kind === 'test' && (
@@ -723,7 +723,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
               <button
                 type="button"
                 onClick={() => setCurrentQ((c) => Math.min(totalQ - 1, c + 1))}
-                className="inline-flex items-center gap-1 rounded-lg bg-[#0f2342] px-4 py-2 text-xs font-bold text-white hover:bg-[#1a3664] whitespace-nowrap"
+                className="inline-flex items-center gap-1 rounded-lg bg-[#09251C] px-4 py-2 text-xs font-bold text-[#F8EADC] hover:bg-[#0f3a2c] whitespace-nowrap"
               >
                 Sonraki Soru
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -732,7 +732,7 @@ export const ExamCenter: React.FC<ExamCenterProps> = ({ onPeekSlideBySource }) =
               <button
                 type="button"
                 onClick={handleSubmitExam}
-                className="rounded-lg bg-red-700 px-4 py-2 text-xs font-bold text-white hover:bg-red-800 whitespace-nowrap"
+                className="rounded-lg bg-[#A55704] px-4 py-2 text-xs font-bold text-[#F8EADC] hover:bg-[#894603] whitespace-nowrap"
               >
                 Sınavı Bitir ve Puanla
               </button>

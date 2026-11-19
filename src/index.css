@@ -13,8 +13,8 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: #FAF6F0;
+    color: #09251C;
     line-height: 1.6;
   }
 
@@ -22,6 +22,25 @@
     font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
   }
+}
+
+/* Subtle scrollbar for independently scrollable desktop course sidebar */
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(9, 37, 28, 0.25) transparent;
+}
+.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(9, 37, 28, 0.22);
+  border-radius: 9999px;
+}
+.sidebar-scroll:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(9, 37, 28, 0.42);
 }
 
 /* 3D Flip Cards for Hap Bilgiler */
@@ -84,13 +103,13 @@
 }
 
 .slide-content table.data-table th {
-  background-color: #0f2342;
-  color: #ffffff;
+  background-color: #09251C;
+  color: #F8EADC;
   font-weight: 700;
 }
 
 .slide-content table.data-table tr:nth-child(even) td {
-  background-color: #f8fafc;
+  background-color: #FAF6F0;
 }
 
 .slide-content ul {

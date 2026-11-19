@@ -97,10 +97,10 @@ export const PdfSlidePreview: React.FC<PdfSlidePreviewProps> = ({
 
   return (
     <>
-      <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
-        <div className="flex items-center justify-between gap-2 border-b border-slate-200 bg-slate-50 px-3 py-2 text-xs">
-          <div className="flex min-w-0 items-center gap-1.5 font-semibold text-[#0f2342]">
-            <FileImage className="h-3.5 w-3.5 shrink-0 text-red-700" />
+      <div className="overflow-hidden rounded-xl border border-slate-200 bg-[#FAF6F0]">
+        <div className="flex items-center justify-between gap-2 border-b border-slate-200 bg-[#FAF6F0] px-3 py-2 text-xs">
+          <div className="flex min-w-0 items-center gap-1.5 font-semibold text-[#09251C]">
+            <FileImage className="h-3.5 w-3.5 shrink-0 text-[#A55704]" />
             <span className="truncate">
               {pdfLabel || pdfFile} · Sayfa {pageNumber}
             </span>
@@ -109,7 +109,7 @@ export const PdfSlidePreview: React.FC<PdfSlidePreviewProps> = ({
             <button
               type="button"
               onClick={() => setZoomOpen(true)}
-              className="inline-flex shrink-0 items-center gap-1 rounded border border-slate-300 bg-white px-2 py-0.5 text-[11px] font-bold text-[#0f2342] hover:bg-slate-100"
+              className="inline-flex shrink-0 items-center gap-1 rounded border border-slate-300 bg-white px-2 py-0.5 text-[11px] font-bold text-[#09251C] hover:bg-[#F8EADC]"
             >
               <Maximize2 className="h-3 w-3" />
               Büyüt
@@ -124,7 +124,7 @@ export const PdfSlidePreview: React.FC<PdfSlidePreviewProps> = ({
         >
           {loading && (
             <div className="flex flex-col items-center gap-2 py-10 text-xs font-medium text-slate-500">
-              <Loader2 className="h-5 w-5 animate-spin text-[#0f2342]" />
+              <Loader2 className="h-5 w-5 animate-spin text-[#09251C]" />
               <span>Slayt görseli PDF&apos;den yükleniyor...</span>
             </div>
           )}
@@ -152,7 +152,7 @@ export const PdfSlidePreview: React.FC<PdfSlidePreviewProps> = ({
         </div>
 
         {caption && (
-          <div className="border-t border-slate-200 bg-slate-50 px-3 py-2 text-[11px] font-medium text-slate-600">
+          <div className="border-t border-slate-200 bg-[#FAF6F0] px-3 py-2 text-[11px] font-medium text-slate-600">
             {caption}
           </div>
         )}
@@ -170,7 +170,7 @@ export const PdfSlidePreview: React.FC<PdfSlidePreviewProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-2 flex items-center justify-between gap-3 border-b border-slate-200 pb-2">
-              <div className="text-sm font-bold text-[#0f2342]">
+              <div className="text-sm font-bold text-[#09251C]">
                 {pdfLabel || pdfFile} · PDF Sayfa {pageNumber} (Birebir Slayt Görünümü)
               </div>
               <button

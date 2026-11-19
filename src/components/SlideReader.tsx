@@ -29,7 +29,7 @@ export const WeekSlideReader: React.FC<WeekSlideReaderProps> = ({
     <section className="rounded-xl border border-slate-200 bg-white p-6">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
         <div>
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             {week.tag} — PDF Sayfa Okuyucu
           </h2>
           <p className="text-xs text-slate-500">
@@ -50,7 +50,7 @@ export const WeekSlideReader: React.FC<WeekSlideReaderProps> = ({
             type="button"
             disabled={safeIdx >= week.slides.length - 1}
             onClick={() => onChangeSlideIdx(safeIdx + 1)}
-            className="inline-flex items-center gap-1 rounded-lg bg-[#0f2342] px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-[#1a3664] disabled:cursor-not-allowed disabled:opacity-40 whitespace-nowrap"
+            className="inline-flex items-center gap-1 rounded-lg bg-[#09251C] px-3 py-1.5 text-xs font-semibold text-[#F8EADC] transition-colors hover:bg-[#0f3a2c] disabled:cursor-not-allowed disabled:opacity-40 whitespace-nowrap"
           >
             Sonraki
             <ChevronRight className="h-3.5 w-3.5" />
@@ -67,8 +67,8 @@ export const WeekSlideReader: React.FC<WeekSlideReaderProps> = ({
             onClick={() => onChangeSlideIdx(idx)}
             className={`rounded-md border px-2.5 py-1 font-mono text-xs font-semibold tabular-nums transition-colors ${
               idx === safeIdx
-                ? 'border-[#0f2342] bg-[#0f2342] text-white'
-                : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-slate-100'
+                ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]'
+                : 'border-slate-200 bg-[#FAF6F0] text-slate-700 hover:border-slate-300 hover:bg-[#F8EADC]'
             }`}
           >
             Sayfa {s.n}
@@ -77,12 +77,12 @@ export const WeekSlideReader: React.FC<WeekSlideReaderProps> = ({
       </div>
 
       {/* Page Frame */}
-      <div className="overflow-hidden rounded-xl border border-[#0f2342]">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b-4 border-red-700 bg-[#0f2342] px-5 py-3.5 text-white">
+      <div className="overflow-hidden rounded-xl border border-[#09251C]">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b-4 border-[#A55704] bg-[#09251C] px-5 py-3.5 text-[#F8EADC]">
           <strong className="min-w-0 text-base font-bold [overflow-wrap:anywhere]">
             PDF Sayfa {slide.n}: {slide.t}
           </strong>
-          <span className="shrink-0 font-mono text-xs text-slate-300">
+          <span className="shrink-0 font-mono text-xs text-[#F3D2AF]">
             {week.tag} · {safeIdx + 1}/{week.slides.length}
           </span>
         </div>
@@ -132,7 +132,7 @@ export const AllSlidesView: React.FC<AllSlidesViewProps> = ({
       <div className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h1 className="text-xl font-extrabold text-[#0f2342]">
+            <h1 className="text-xl font-extrabold text-[#09251C]">
               Tüm PDF Sayfaları Arşivi
             </h1>
             <p className="text-sm text-slate-600">
@@ -146,7 +146,7 @@ export const AllSlidesView: React.FC<AllSlidesViewProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="PDF sayfasında ara (örn. ENIAC, Deadlock)..."
-              className="w-full rounded-lg border border-slate-300 bg-slate-50 py-2 pl-9 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#0f2342] focus:bg-white focus:outline-none"
+              className="w-full rounded-lg border border-slate-300 bg-[#FAF6F0] py-2 pl-9 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#09251C] focus:bg-white focus:outline-none"
             />
           </div>
         </div>
@@ -163,8 +163,8 @@ export const AllSlidesView: React.FC<AllSlidesViewProps> = ({
               }}
               className={`max-w-full rounded-lg px-3 py-1.5 text-left text-xs font-bold transition-colors sm:whitespace-nowrap ${
                 w.id === activeWeek.id
-                  ? 'bg-[#0f2342] text-white'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  ? 'bg-[#09251C] text-[#F8EADC]'
+                  : 'bg-[#FAF6F0] text-slate-700 hover:bg-[#F8EADC]'
               }`}
             >
               {w.tag}: {w.title}
@@ -173,7 +173,7 @@ export const AllSlidesView: React.FC<AllSlidesViewProps> = ({
         </div>
 
         {searchQuery.trim() !== '' && (
-          <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+          <div className="mt-4 rounded-lg border border-slate-200 bg-[#FAF6F0] p-4">
             <div className="mb-2 text-xs font-bold text-slate-600">
               Arama Sonuçları ({searchResults.length} eşleşme)
             </div>
@@ -190,9 +190,9 @@ export const AllSlidesView: React.FC<AllSlidesViewProps> = ({
                       onSelectSlideIdx(res.slideIdx);
                       setSearchQuery('');
                     }}
-                    className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-left text-xs font-semibold text-[#0f2342] transition-colors hover:border-[#0f2342] hover:bg-slate-100"
+                    className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-left text-xs font-semibold text-[#09251C] transition-colors hover:border-[#09251C] hover:bg-[#F8EADC]"
                   >
-                    <span className="text-red-700">{res.week.tag} · Sayfa {res.slideNum}:</span>{' '}
+                    <span className="text-[#A55704]">{res.week.tag} · Sayfa {res.slideNum}:</span>{' '}
                     {res.title}
                   </button>
                 ))}

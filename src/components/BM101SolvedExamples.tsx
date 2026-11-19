@@ -35,7 +35,7 @@ export const BM101SolvedExamples: React.FC<BM101SolvedExamplesProps> = ({
   return (
     <div className="space-y-5">
       <section className="rounded-xl border border-slate-200 bg-white p-6">
-        <h1 className="text-xl font-extrabold text-[#0f2342]">
+        <h1 className="text-xl font-extrabold text-[#09251C]">
           BM101 Slayt &amp; Lab Örnek Sorularının Çözümleri
         </h1>
         <p className="mt-1 text-sm text-slate-600">
@@ -51,8 +51,8 @@ export const BM101SolvedExamples: React.FC<BM101SolvedExamplesProps> = ({
                 onClick={() => setSelectedCat(c.id)}
                 className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-colors ${
                   selectedCat === c.id
-                    ? 'bg-[#0f2342] text-white'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    ? 'bg-[#09251C] text-[#F8EADC]'
+                    : 'bg-[#FAF6F0] text-slate-700 hover:bg-[#F8EADC]'
                 }`}
               >
                 {c.label}
@@ -74,19 +74,19 @@ export const BM101SolvedExamples: React.FC<BM101SolvedExamplesProps> = ({
               className="overflow-hidden rounded-xl border border-slate-200 bg-white"
             >
               {/* Header with clickable PDF + Page locator */}
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-5 py-3.5">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-[#FAF6F0] px-5 py-3.5">
                 <div className="min-w-0">
-                  <div className="text-xs font-bold text-red-700">
+                  <div className="text-xs font-bold text-[#A55704]">
                     Örnek #{idx + 1} · {ex.weekId.toUpperCase()}
                   </div>
-                  <h2 className="text-base font-extrabold text-[#0f2342] [overflow-wrap:anywhere]">
+                  <h2 className="text-base font-extrabold text-[#09251C] [overflow-wrap:anywhere]">
                     {ex.title}
                   </h2>
                 </div>
                 <button
                   type="button"
                   onClick={() => onPeekSlide(ex.pdfFile, ex.pdfLabel, ex.slideNum, ex.weekId)}
-                  className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-[#0f2342]/30 bg-white px-3 py-1.5 text-xs font-bold text-[#0f2342] transition-colors hover:bg-[#0f2342] hover:text-white"
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-[#09251C]/30 bg-white px-3 py-1.5 text-xs font-bold text-[#09251C] transition-colors hover:bg-[#09251C] hover:text-[#F8EADC]"
                 >
                   <BookOpen className="h-3.5 w-3.5" />
                   {ex.pdfLabel} · Sayfa {ex.slideNum}
@@ -99,7 +99,7 @@ export const BM101SolvedExamples: React.FC<BM101SolvedExamplesProps> = ({
                 <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
                   {/* Code / Pseudo */}
                   <div className="min-w-0 overflow-hidden rounded-xl border border-slate-800 bg-slate-950 text-slate-100 lg:col-span-6">
-                    <div className="flex items-center gap-1.5 border-b border-slate-800 bg-slate-900 px-3.5 py-2 text-xs font-bold text-sky-300">
+                    <div className="flex items-center gap-1.5 border-b border-slate-800 bg-slate-900 px-3.5 py-2 text-xs font-bold text-[#F3D2AF]">
                       <Code2 className="h-3.5 w-3.5" />
                       Çözüm Kodu / Sözde Kod
                     </div>

@@ -68,11 +68,11 @@ const ExecutionTracerPanel: React.FC<{
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
         <div>
           {accentLabel && (
-            <div className="text-[11px] font-bold uppercase tracking-wide text-red-700">
+            <div className="text-[11px] font-bold uppercase tracking-wide text-[#A55704]">
               {accentLabel}
             </div>
           )}
-          <h3 className="text-base font-extrabold text-[#0f2342]">{heading}</h3>
+          <h3 className="text-base font-extrabold text-[#09251C]">{heading}</h3>
         </div>
         <div className="flex flex-wrap items-center gap-1.5">
           <button
@@ -104,7 +104,7 @@ const ExecutionTracerPanel: React.FC<{
               if (stepIdx >= steps.length - 1) setStepIdx(0);
               setPlaying((p) => !p);
             }}
-            className="inline-flex items-center gap-1 rounded-lg bg-[#0f2342] px-3 py-1.5 text-xs font-bold text-white hover:bg-[#1a3664]"
+            className="inline-flex items-center gap-1 rounded-lg bg-[#09251C] px-3 py-1.5 text-xs font-bold text-[#F8EADC] hover:bg-[#0f3a2c]"
           >
             {playing ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
             {playing ? 'Durdur' : 'Oynat'}
@@ -116,7 +116,7 @@ const ExecutionTracerPanel: React.FC<{
               setPlaying(false);
               setStepIdx((s) => Math.min(steps.length - 1, s + 1));
             }}
-            className="inline-flex items-center gap-1 rounded-lg bg-red-700 px-3 py-1.5 text-xs font-bold text-white hover:bg-red-800 disabled:opacity-40"
+            className="inline-flex items-center gap-1 rounded-lg bg-[#A55704] px-3 py-1.5 text-xs font-bold text-[#F8EADC] hover:bg-[#894603] disabled:opacity-40"
           >
             Sonraki Adım
             <SkipForward className="h-3.5 w-3.5" />
@@ -136,10 +136,10 @@ const ExecutionTracerPanel: React.FC<{
             }}
             className={`rounded-md border px-2.5 py-1 font-mono text-xs font-bold tabular-nums transition-colors ${
               idx === stepIdx
-                ? 'border-[#0f2342] bg-[#0f2342] text-white'
+                ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]'
                 : idx < stepIdx
                 ? 'border-emerald-300 bg-emerald-50 text-emerald-900'
-                : 'border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'
+                : 'border-slate-200 bg-[#FAF6F0] text-slate-600 hover:bg-[#F5ECE0]'
             }`}
           >
             Adım {st.stepNum}
@@ -153,7 +153,7 @@ const ExecutionTracerPanel: React.FC<{
         <div className="min-w-0 overflow-hidden rounded-xl border border-slate-800 bg-slate-950 text-slate-100 lg:col-span-5">
           <div className="flex items-center justify-between border-b border-slate-800 bg-slate-900 px-3.5 py-2 text-xs font-bold text-slate-300">
             <span>C Kaynak Kodu</span>
-            <span className="font-mono text-sky-300">Satır {cur.activeLine}</span>
+            <span className="font-mono text-[#F3D2AF]">Satır {cur.activeLine}</span>
           </div>
           <div className="overflow-x-auto p-3 font-mono text-xs leading-6">
             {codeLines.map((line, i) => {
@@ -189,14 +189,14 @@ const ExecutionTracerPanel: React.FC<{
             }`}
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <span className="font-mono text-xs font-extrabold uppercase text-[#0f2342]">
+              <span className="font-mono text-xs font-extrabold uppercase text-[#09251C]">
                 Adım {cur.stepNum} / {steps.length} · {cur.title}
               </span>
               {cur.phase && cur.phase !== 'normal' && (
                 <span
                   className={`inline-flex items-center gap-1 rounded px-2 py-0.5 text-[11px] font-bold ${
                     cur.phase === 'push'
-                      ? 'bg-[#0f2342] text-white'
+                      ? 'bg-[#09251C] text-[#F8EADC]'
                       : cur.phase === 'base'
                       ? 'bg-emerald-700 text-white'
                       : 'bg-sky-700 text-white'
@@ -220,8 +220,8 @@ const ExecutionTracerPanel: React.FC<{
           </div>
 
           {/* Live Memory Cells */}
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-3.5">
-            <div className="mb-2 text-xs font-extrabold uppercase tracking-wide text-[#0f2342]">
+          <div className="rounded-xl border border-slate-200 bg-[#FAF6F0] p-3.5">
+            <div className="mb-2 text-xs font-extrabold uppercase tracking-wide text-[#09251C]">
               Bu Adımda Bellekteki (RAM) Geçerli Değerler
             </div>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -236,9 +236,9 @@ const ExecutionTracerPanel: React.FC<{
                 >
                   <div className="min-w-0">
                     <div className="text-[10px] font-semibold text-slate-500">{m.scope}</div>
-                    <div className="font-mono font-bold text-[#0f2342]">{m.name}</div>
+                    <div className="font-mono font-bold text-[#09251C]">{m.name}</div>
                   </div>
-                  <span className="shrink-0 rounded bg-slate-900 px-2 py-0.5 font-mono text-xs font-bold text-sky-300">
+                  <span className="shrink-0 rounded bg-[#09251C] px-2 py-0.5 font-mono text-xs font-bold text-[#F3D2AF]">
                     {m.val}
                   </span>
                 </div>
@@ -248,8 +248,8 @@ const ExecutionTracerPanel: React.FC<{
 
           {/* Call Stack (if present for this tracer) */}
           {cur.stack && cur.stack.length > 0 && (
-            <div className="rounded-xl border border-[#0f2342]/25 bg-white p-3.5">
-              <div className="mb-2 flex items-center justify-between text-xs font-extrabold uppercase tracking-wide text-[#0f2342]">
+            <div className="rounded-xl border border-[#09251C]/25 bg-white p-3.5">
+              <div className="mb-2 flex items-center justify-between text-xs font-extrabold uppercase tracking-wide text-[#09251C]">
                 <span>Function Call Stack (Üstten Alta · LIFO)</span>
                 <span className="font-mono text-[11px] text-slate-500">
                   Aktif Çerçeve: {cur.stack.length}
@@ -261,12 +261,12 @@ const ExecutionTracerPanel: React.FC<{
                     key={fIdx}
                     className={`flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2 font-mono text-xs ${
                       frame.active || fIdx === 0
-                        ? 'border-red-500 bg-red-50/70 font-bold text-[#0f2342]'
-                        : 'border-slate-200 bg-slate-50 text-slate-700'
+                        ? 'border-[#A55704] bg-[#F8EADC]/70 font-bold text-[#09251C]'
+                        : 'border-slate-200 bg-[#FAF6F0] text-slate-700'
                     }`}
                   >
                     <div>
-                      <span className="text-red-700">{fIdx === 0 ? '▶ ' : ''}</span>
+                      <span className="text-[#A55704]">{fIdx === 0 ? '▶ ' : ''}</span>
                       <span>{frame.fn}</span>
                       <span className="ml-2 text-slate-600">[{frame.vars}]</span>
                     </div>
@@ -335,7 +335,7 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
       <div className="rounded-xl border border-slate-200 bg-white p-5">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
           <div>
-            <h3 className="text-base font-extrabold text-[#0f2342]">
+            <h3 className="text-base font-extrabold text-[#09251C]">
               1. Bilgisayar Mimarisi: CPU &amp; Bellek Etkileşimi
             </h3>
             <p className="text-xs text-slate-600">Bileşene tıklayarak görevini ve geçicilik durumunu inceleyin.</p>
@@ -343,7 +343,7 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
           <button
             type="button"
             onClick={() => onPeek('1__Giri__af4dadda.pdf', '1_ Giriş.pdf', 8)}
-            className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#0f2342] hover:bg-slate-100"
+            className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#09251C] hover:bg-slate-100"
           >
             <BookOpen className="h-3.5 w-3.5" />
             1_ Giriş.pdf s.8
@@ -366,8 +366,8 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
               onClick={() => setActiveComp(b.id)}
               className={`rounded-lg border px-3 py-2.5 text-xs font-bold transition-colors ${
                 activeComp === b.id
-                  ? 'border-[#0f2342] bg-[#0f2342] text-white'
-                  : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]'
+                  : 'border-slate-200 bg-[#FAF6F0] text-slate-700 hover:bg-[#F5ECE0]'
               }`}
             >
               {b.label}
@@ -375,8 +375,8 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
           ))}
         </div>
 
-        <div className="mt-3 rounded-lg border border-sky-200 bg-sky-50/70 p-3.5">
-          <div className="text-sm font-bold text-[#0f2342]">{compInfo[activeComp].title}</div>
+        <div className="mt-3 rounded-lg border border-[#A55704]/30 bg-[#FAF6F0] p-3.5">
+          <div className="text-sm font-bold text-[#09251C]">{compInfo[activeComp].title}</div>
           <p className="mt-1 text-xs leading-relaxed text-slate-700">{compInfo[activeComp].desc}</p>
         </div>
       </div>
@@ -385,7 +385,7 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
       <div className="rounded-xl border border-slate-200 bg-white p-5">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
           <div>
-            <h3 className="text-base font-extrabold text-[#0f2342]">
+            <h3 className="text-base font-extrabold text-[#09251C]">
               2. Lab 1 Simülatörü: İki Sayının Ortalaması (float vs int Farkı)
             </h3>
             <p className="text-xs text-slate-600">Sayıları ve veri tipini değiştirerek %.2f çıktısının nasıl etkilendiğini görün.</p>
@@ -393,7 +393,7 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
           <button
             type="button"
             onClick={() => onPeek('lab_260928_1e9ffad1.pdf', 'lab_260928.pdf', 10)}
-            className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#0f2342] hover:bg-slate-100"
+            className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#09251C] hover:bg-slate-100"
           >
             <BookOpen className="h-3.5 w-3.5" />
             lab_260928.pdf s.10
@@ -405,7 +405,7 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
             <div>
               <label className="mb-1 flex justify-between text-xs font-bold text-slate-700">
                 <span>1. Sayı (sayi1):</span>
-                <span className="font-mono text-[#0f2342]">{n1}</span>
+                <span className="font-mono text-[#09251C]">{n1}</span>
               </label>
               <input
                 type="range"
@@ -413,13 +413,13 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
                 max={20}
                 value={n1}
                 onChange={(e) => setN1(Number(e.target.value))}
-                className="w-full accent-[#0f2342]"
+                className="w-full accent-[#09251C]"
               />
             </div>
             <div>
               <label className="mb-1 flex justify-between text-xs font-bold text-slate-700">
                 <span>2. Sayı (sayi2):</span>
-                <span className="font-mono text-[#0f2342]">{n2}</span>
+                <span className="font-mono text-[#09251C]">{n2}</span>
               </label>
               <input
                 type="range"
@@ -427,7 +427,7 @@ const Week1Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
                 max={20}
                 value={n2}
                 onChange={(e) => setN2(Number(e.target.value))}
-                className="w-full accent-[#0f2342]"
+                className="w-full accent-[#09251C]"
               />
             </div>
             <div className="flex gap-2">
@@ -537,7 +537,7 @@ const Week2Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
       <div className="rounded-xl border border-slate-200 bg-white p-5">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
           <div>
-            <h3 className="text-base font-extrabold text-[#0f2342]">
+            <h3 className="text-base font-extrabold text-[#09251C]">
               1. C Programı Geliştirme 6 Fazı (Ders 2 s.36)
             </h3>
             <p className="text-xs text-slate-600">Her faza tıklayarak hangi dosyanın oluştuğunu ve hangi hataların nerede çıktığını inceleyin.</p>
@@ -545,7 +545,7 @@ const Week2Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
           <button
             type="button"
             onClick={() => onPeek('2-_Algoritma_ve_Ak___Diyagramlar__5171d132.pdf', '2- Algoritma ve Akış Diyagramları.pdf', 36)}
-            className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#0f2342] hover:bg-slate-100"
+            className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#09251C] hover:bg-slate-100"
           >
             <BookOpen className="h-3.5 w-3.5" />
             Ders 2 s.36
@@ -559,25 +559,25 @@ const Week2Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
               onClick={() => setPhaseIdx(idx)}
               className={`rounded-lg border p-2.5 text-left transition-colors ${
                 phaseIdx === idx
-                  ? 'border-[#0f2342] bg-[#0f2342] text-white'
-                  : 'border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100'
+                  ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]'
+                  : 'border-slate-200 bg-[#FAF6F0] text-slate-800 hover:bg-[#F5ECE0]'
               }`}
             >
               <div className="text-xs font-bold">{p.name}</div>
-              <div className={`mt-0.5 font-mono text-[11px] ${phaseIdx === idx ? 'text-sky-300' : 'text-red-700'}`}>
+              <div className={`mt-0.5 font-mono text-[11px] ${phaseIdx === idx ? 'text-[#F3D2AF]' : 'text-[#A55704]'}`}>
                 {p.file}
               </div>
             </button>
           ))}
         </div>
-        <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs leading-relaxed text-slate-800">
-          <strong className="text-[#0f2342]">{phases[phaseIdx].name}:</strong> {phases[phaseIdx].desc}
+        <div className="mt-3 rounded-lg border border-slate-200 bg-[#FAF6F0] p-3 text-xs leading-relaxed text-slate-800">
+          <strong className="text-[#09251C]">{phases[phaseIdx].name}:</strong> {phases[phaseIdx].desc}
         </div>
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+      <div className="rounded-xl border border-slate-200 bg-[#FAF6F0] p-3">
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-          <span className="text-xs font-bold text-[#0f2342]">Lab 2 Faktöriyel Akışı için x değeri seçin:</span>
+          <span className="text-xs font-bold text-[#09251C]">Lab 2 Faktöriyel Akışı için x değeri seçin:</span>
           <div className="flex gap-1.5">
             {[3, 4, 5].map((n) => (
               <button
@@ -585,7 +585,7 @@ const Week2Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
                 type="button"
                 onClick={() => setFactInput(n)}
                 className={`rounded px-3 py-1 font-mono text-xs font-bold ${
-                  factInput === n ? 'bg-[#0f2342] text-white' : 'border border-slate-300 bg-white text-slate-700'
+                  factInput === n ? 'bg-[#09251C] text-[#F8EADC]' : 'border border-slate-300 bg-white text-slate-700'
                 }`}
               >
                 x = {n}
@@ -691,13 +691,13 @@ const Week3Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white p-4">
-        <span className="text-xs font-bold text-[#0f2342]">
+        <span className="text-xs font-bold text-[#09251C]">
           Lab 3 Sayfa 30 Scanf Bellek Diyagramının Birebir Adım Simülasyonu
         </span>
         <button
           type="button"
           onClick={() => onPeek('lab_261012_77753471.pdf', 'lab_261012.pdf', 30)}
-          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#0f2342] hover:bg-slate-100"
+          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#09251C] hover:bg-slate-100"
         >
           <BookOpen className="h-3.5 w-3.5" />
           Slaytı Gör (lab_261012.pdf s.30)
@@ -721,7 +721,7 @@ const Week3Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div className="rounded-xl border border-slate-200 bg-white p-4">
-          <div className="mb-2 text-xs font-extrabold text-[#0f2342]">
+          <div className="mb-2 text-xs font-extrabold text-[#09251C]">
             ASCII %c / %d Dönüştürücü (Lab 3 s.26–27)
           </div>
           <div className="flex gap-2">
@@ -731,7 +731,7 @@ const Week3Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
                 type="button"
                 onClick={() => setAsciiChar(c)}
                 className={`rounded-lg border px-3 py-1.5 font-mono text-xs font-bold ${
-                  asciiChar === c ? 'bg-[#0f2342] text-white' : 'bg-slate-50 text-slate-700'
+                  asciiChar === c ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]' : 'bg-[#FAF6F0] text-slate-700'
                 }`}
               >
                 &apos;{c}&apos;
@@ -746,7 +746,7 @@ const Week3Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-white p-4">
-          <div className="mb-2 flex items-center justify-between text-xs font-extrabold text-[#0f2342]">
+          <div className="mb-2 flex items-center justify-between text-xs font-extrabold text-[#09251C]">
             <span>Ön vs Son Artırım (++a ve a++)</span>
             <input
               type="number"
@@ -919,7 +919,7 @@ const Week4Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
               type="button"
               onClick={() => setScenario(b.id as typeof scenario)}
               className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-colors ${
-                scenario === b.id ? 'bg-[#0f2342] text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                scenario === b.id ? 'bg-[#09251C] text-[#F8EADC]' : 'bg-[#F5ECE0] text-[#09251C] hover:bg-[#F3D2AF]/50'
               }`}
             >
               {b.label}
@@ -929,7 +929,7 @@ const Week4Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
         <button
           type="button"
           onClick={() => onPeek('lab_261019_d96f8c28.pdf', 'lab_261019.pdf', 30)}
-          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#0f2342]"
+          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#09251C]"
         >
           <BookOpen className="h-3.5 w-3.5" />
           Lab 4 Slaytı
@@ -1130,7 +1130,7 @@ const Week5Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
             type="button"
             onClick={() => setMode('lab5Static')}
             className={`rounded-lg px-3 py-1.5 text-xs font-bold ${
-              mode === 'lab5Static' ? 'bg-[#0f2342] text-white' : 'bg-slate-100 text-slate-700'
+              mode === 'lab5Static' ? 'bg-[#09251C] text-[#F8EADC]' : 'bg-[#F5ECE0] text-[#09251C]'
             }`}
           >
             Lab 5: static &amp; printf Değerlendirme Sırası
@@ -1139,7 +1139,7 @@ const Week5Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
             type="button"
             onClick={() => setMode('deitelScope')}
             className={`rounded-lg px-3 py-1.5 text-xs font-bold ${
-              mode === 'deitelScope' ? 'bg-[#0f2342] text-white' : 'bg-slate-100 text-slate-700'
+              mode === 'deitelScope' ? 'bg-[#09251C] text-[#F8EADC]' : 'bg-[#F5ECE0] text-[#09251C]'
             }`}
           >
             Ders 5: Global vs Local vs Block vs Static
@@ -1154,7 +1154,7 @@ const Week5Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
               mode === 'lab5Static' ? 24 : 17
             )
           }
-          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#0f2342]"
+          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#09251C]"
         >
           <BookOpen className="h-3.5 w-3.5" />
           İlgili Slaytı Aç
@@ -1538,8 +1538,8 @@ const Week6Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
             onClick={() => setSubMode('callstack')}
             className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-xs font-bold transition-colors ${
               subMode === 'callstack'
-                ? 'bg-[#0f2342] text-white'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                ? 'bg-[#09251C] text-[#F8EADC]'
+                : 'bg-[#F5ECE0] text-[#09251C] hover:bg-[#F3D2AF]/50'
             }`}
           >
             <Layers className="h-3.5 w-3.5" />
@@ -1550,8 +1550,8 @@ const Week6Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
             onClick={() => setSubMode('factorial')}
             className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-xs font-bold transition-colors ${
               subMode === 'factorial'
-                ? 'bg-red-700 text-white'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                ? 'bg-[#A55704] text-[#F8EADC]'
+                : 'bg-[#F5ECE0] text-[#09251C] hover:bg-[#F3D2AF]/50'
             }`}
           >
             <Cpu className="h-3.5 w-3.5" />
@@ -1562,8 +1562,8 @@ const Week6Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
             onClick={() => setSubMode('moreRec')}
             className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-xs font-bold transition-colors ${
               subMode === 'moreRec'
-                ? 'bg-[#0f2342] text-white'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                ? 'bg-[#09251C] text-[#F8EADC]'
+                : 'bg-[#F5ECE0] text-[#09251C] hover:bg-[#F3D2AF]/50'
             }`}
           >
             3. Lab 6 Özyineleme (Rakam Toplamı, Üs, Fibonacci)
@@ -1579,7 +1579,7 @@ const Week6Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
               subMode === 'callstack' ? 17 : 6
             )
           }
-          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#0f2342] hover:bg-slate-100"
+          className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs font-bold text-[#09251C] hover:bg-slate-100"
         >
           <BookOpen className="h-3.5 w-3.5" />
           Ders 6 Slaytını Gör
@@ -1589,16 +1589,16 @@ const Week6Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
       {/* Mode 1: Call Stack */}
       {subMode === 'callstack' && (
         <div className="space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-sky-200 bg-sky-50/70 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-[#A55704]/30 bg-[#FAF6F0] p-4">
             <div className="text-xs leading-relaxed text-slate-800">
-              <strong className="text-[#0f2342]">Call Stack Kuralı (LIFO):</strong> Her fonksiyon çağrısında tepede yeni bir Stack Frame (otomatik yerel değişkenler + dönüş adresi R1/R2) açılır; fonksiyon bitince o frame bellekten silinir.
+              <strong className="text-[#09251C]">Call Stack Kuralı (LIFO):</strong> Her fonksiyon çağrısında tepede yeni bir Stack Frame (otomatik yerel değişkenler + dönüş adresi R1/R2) açılır; fonksiyon bitince o frame bellekten silinir.
             </div>
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={() => setStackDemo('square')}
                 className={`rounded-lg px-3 py-1.5 text-xs font-bold ${
-                  stackDemo === 'square' ? 'bg-[#0f2342] text-white' : 'border border-slate-300 bg-white text-slate-700'
+                  stackDemo === 'square' ? 'bg-[#09251C] text-[#F8EADC]' : 'border border-slate-300 bg-white text-slate-700'
                 }`}
               >
                 main → square(a) (R1/R2)
@@ -1654,19 +1654,19 @@ const Week6Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
       {/* Mode 2: Factorial Recursion */}
       {subMode === 'factorial' && (
         <div className="space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-red-200 bg-red-50/60 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-[#A55704]/30 bg-[#FAF6F0] p-4">
             <div className="text-xs text-slate-800">
-              <strong className="text-red-900">Özyinelemede İki Aşama (Ders 6 s.5–12):</strong> İlk olarak Base Case&apos;e kadar çerçeveler üst üste yığılır (PUSH); ardından tabandan yukarıya doğru çarpımlar çözülüp frame&apos;ler çıkarılır (POP).
+              <strong className="text-[#A55704]">Özyinelemede İki Aşama (Ders 6 s.5–12):</strong> İlk olarak Base Case&apos;e kadar çerçeveler üst üste yığılır (PUSH); ardından tabandan yukarıya doğru çarpımlar çözülüp frame&apos;ler çıkarılır (POP).
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-[#0f2342]">Girdi n:</span>
+              <span className="text-xs font-bold text-[#09251C]">Girdi n:</span>
               {([3, 4, 5] as const).map((n) => (
                 <button
                   key={n}
                   type="button"
                   onClick={() => setFactN(n)}
                   className={`rounded-lg px-3 py-1 font-mono text-xs font-bold ${
-                    factN === n ? 'bg-red-700 text-white' : 'border border-slate-300 bg-white text-slate-700'
+                    factN === n ? 'bg-[#A55704] text-[#F8EADC]' : 'border border-slate-300 bg-white text-slate-700'
                   }`}
                 >
                   n = {n}
@@ -1703,7 +1703,7 @@ const Week6Lab: React.FC<{ onPeek: BM101InteractiveLabsProps['onPeekSlide'] }> =
                 type="button"
                 onClick={() => setRecKind(b.id as typeof recKind)}
                 className={`rounded-lg px-3 py-1.5 text-xs font-bold ${
-                  recKind === b.id ? 'bg-[#0f2342] text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  recKind === b.id ? 'bg-[#09251C] text-[#F8EADC]' : 'bg-[#F5ECE0] text-[#09251C] hover:bg-[#F3D2AF]/50'
                 }`}
               >
                 {b.label}

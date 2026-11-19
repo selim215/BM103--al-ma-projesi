@@ -28,7 +28,7 @@ export const HapCards: React.FC<HapCardsProps> = ({ week, onPeekSlide }) => {
     <section className="rounded-xl border border-slate-200 bg-white p-6">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
         <div>
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             {week.tag} — Hap Bilgiler ve Hızlı Tekrar Kartları
           </h2>
           <p className="text-sm text-slate-600">
@@ -65,12 +65,12 @@ export const HapCards: React.FC<HapCardsProps> = ({ week, onPeekSlide }) => {
             >
               <div className="hap-inner">
                 {/* Front */}
-                <div className="hap-face flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/70 p-5 transition-colors hover:border-[#0f2342]/40">
+                <div className="hap-face flex flex-col justify-between rounded-xl border border-slate-200 bg-[#FAF6F0] p-5 transition-colors hover:border-[#09251C]/40">
                   <div className="flex items-center justify-between gap-2 text-xs font-medium text-slate-500">
-                    <span className="font-semibold text-red-700">{item.badge}</span>
+                    <span className="font-semibold text-[#A55704]">{item.badge}</span>
                     <span>PDF Sayfa {item.slide}</span>
                   </div>
-                  <p className="my-3 text-[15px] font-bold leading-snug text-[#0f2342]">
+                  <p className="my-3 text-[15px] font-bold leading-snug text-[#09251C]">
                     {item.q}
                   </p>
                   <div className="flex items-center justify-between text-xs font-medium text-slate-500">
@@ -80,25 +80,25 @@ export const HapCards: React.FC<HapCardsProps> = ({ week, onPeekSlide }) => {
                 </div>
 
                 {/* Back */}
-                <div className="hap-face hap-back flex flex-col justify-between rounded-xl border border-[#0f2342] bg-[#0f2342] p-5 text-white">
-                  <div className="flex items-center justify-between gap-2 text-xs text-slate-300">
-                    <span className="font-semibold text-red-300">{item.badge}</span>
+                <div className="hap-face hap-back flex flex-col justify-between rounded-xl border border-[#09251C] bg-[#09251C] p-5 text-[#F8EADC]">
+                  <div className="flex items-center justify-between gap-2 text-xs text-[#F3D2AF]/80">
+                    <span className="font-semibold text-[#F3D2AF]">{item.badge}</span>
                     <button
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         onPeekSlide(week.id, item.slide);
                       }}
-                      className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-semibold text-blue-200 underline-offset-2 hover:bg-white/10 hover:underline whitespace-nowrap"
+                      className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-semibold text-[#F3D2AF] underline-offset-2 hover:bg-white/10 hover:underline whitespace-nowrap"
                     >
                       <BookOpen className="h-3 w-3" />
                       Sayfa {item.slide}
                     </button>
                   </div>
-                  <p className="my-2 overflow-y-auto text-sm leading-relaxed text-slate-100">
+                  <p className="my-2 overflow-y-auto text-sm leading-relaxed text-[#F8EADC]">
                     {item.a}
                   </p>
-                  <div className="text-xs text-slate-300">
+                  <div className="text-xs text-[#F3D2AF]/75">
                     Soruya dönmek için karta tıklayın
                   </div>
                 </div>

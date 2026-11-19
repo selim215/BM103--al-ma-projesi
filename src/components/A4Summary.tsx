@@ -9,12 +9,12 @@ interface A4SheetProps {
 
 export const A4Sheet: React.FC<A4SheetProps> = ({ week }) => (
   <article className="a4-sheet mx-auto w-full max-w-[210mm] overflow-hidden border border-slate-300 bg-white p-5 text-[#111827] shadow-sm sm:p-8">
-    <header className="mb-4 flex flex-wrap items-end justify-between gap-3 border-b-2 border-[#0f2342] pb-2.5">
+    <header className="mb-4 flex flex-wrap items-end justify-between gap-3 border-b-2 border-[#09251C] pb-2.5">
       <div className="min-w-0">
-        <div className="text-[11px] font-bold tracking-wide text-red-700">
+        <div className="text-[11px] font-bold tracking-wide text-[#A55704]">
           BM103 Bilgisayar Mühendisliğinin Temelleri · {week.tag}
         </div>
-        <h2 className="text-lg font-extrabold text-[#0f2342] [overflow-wrap:anywhere]">
+        <h2 className="text-lg font-extrabold text-[#09251C] [overflow-wrap:anywhere]">
           {week.title} — Nokta Atışı Özet
         </h2>
       </div>
@@ -27,7 +27,7 @@ export const A4Sheet: React.FC<A4SheetProps> = ({ week }) => (
     <div className="a4-cols grid grid-cols-1 gap-4 md:grid-cols-2">
       {week.summaryA4.map((sec, idx) => (
         <section key={idx} className="a4-section min-w-0">
-          <h3 className="mb-1.5 border-b border-slate-200 pb-1 text-sm font-bold text-red-700 [overflow-wrap:anywhere]">
+          <h3 className="mb-1.5 border-b border-slate-200 pb-1 text-sm font-bold text-[#A55704] [overflow-wrap:anywhere]">
             {sec.h}
           </h3>
           <ul className="list-disc space-y-1 pl-4 text-[13px] leading-snug text-slate-800 [overflow-wrap:anywhere]">
@@ -46,7 +46,7 @@ export const WeekA4View: React.FC<{ week: WeekModule }> = ({ week }) => {
     <div className="space-y-5">
       <div className="no-print flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white p-5">
         <div>
-          <h3 className="text-base font-bold text-[#0f2342]">
+          <h3 className="text-base font-bold text-[#09251C]">
             A4 Yazdırılabilir / PDF Özet Modu
           </h3>
           <p className="text-sm text-slate-600">
@@ -56,7 +56,7 @@ export const WeekA4View: React.FC<{ week: WeekModule }> = ({ week }) => {
         <button
           type="button"
           onClick={() => window.print()}
-          className="inline-flex items-center gap-2 rounded-lg bg-red-700 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-red-800 whitespace-nowrap shrink-0"
+          className="inline-flex items-center gap-2 rounded-lg bg-[#A55704] px-4 py-2 text-sm font-bold text-[#F8EADC] transition-colors hover:bg-[#894603] whitespace-nowrap shrink-0"
         >
           <Printer className="h-4 w-4" />
           A4 Yazdır / PDF Kaydet
@@ -74,7 +74,7 @@ export const AllA4View: React.FC = () => {
     <div className="space-y-6">
       <div className="no-print flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white p-6">
         <div>
-          <h1 className="text-xl font-extrabold text-[#0f2342]">
+          <h1 className="text-xl font-extrabold text-[#09251C]">
             Tüm Haftaların Kapsamlı A4 Özet Paketi
           </h1>
           <p className="text-sm text-slate-600">
@@ -84,7 +84,7 @@ export const AllA4View: React.FC = () => {
         <button
           type="button"
           onClick={() => window.print()}
-          className="inline-flex items-center gap-2 rounded-lg bg-red-700 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-red-800 whitespace-nowrap shrink-0"
+          className="inline-flex items-center gap-2 rounded-lg bg-[#A55704] px-4 py-2.5 text-sm font-bold text-[#F8EADC] transition-colors hover:bg-[#894603] whitespace-nowrap shrink-0"
         >
           <Printer className="h-4 w-4" />
           Tümünü A4 Yazdır / PDF Kaydet

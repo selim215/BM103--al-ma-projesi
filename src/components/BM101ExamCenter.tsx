@@ -120,15 +120,15 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
     return (
       <div className="space-y-6">
         <section className="rounded-xl border border-slate-200 bg-white p-6">
-          <h1 className="text-xl font-extrabold text-[#0f2342]">
+          <h1 className="text-xl font-extrabold text-[#09251C]">
             BM101 Vize Sınav Merkezi — Hocanın 3 Soruluk Sınav Formatına Özel Senaryolar
           </h1>
           <p className="mt-1.5 text-sm text-slate-600">
             Her vize senaryosu tam olarak{' '}
-            <strong className="text-[#0f2342]">3 sorudan</strong> oluşur:{' '}
-            <strong className="text-[#0f2342]">1)</strong> Kod verip ekran çıktısı sorma (30p) ·{' '}
-            <strong className="text-[#0f2342]">2)</strong> C programı / fonksiyonu yazma (40p) ·{' '}
-            <strong className="text-[#0f2342]">3)</strong> Kod çalışırken verilen adımda bellekteki &amp; Call Stack&apos;teki değerleri sorma (30p).
+            <strong className="text-[#09251C]">3 sorudan</strong> oluşur:{' '}
+            <strong className="text-[#09251C]">1)</strong> Kod verip ekran çıktısı sorma (30p) ·{' '}
+            <strong className="text-[#09251C]">2)</strong> C programı / fonksiyonu yazma (40p) ·{' '}
+            <strong className="text-[#09251C]">3)</strong> Kod çalışırken verilen adımda bellekteki &amp; Call Stack&apos;teki değerleri sorma (30p).
           </p>
         </section>
 
@@ -138,14 +138,14 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
             return (
               <article
                 key={sc.id}
-                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 hover:border-[#0f2342]"
+                className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 hover:border-[#09251C]"
               >
                 <div>
                   <div className="mb-2 flex items-center justify-between gap-2 text-xs font-bold">
-                    <span className="text-red-700">{sc.badge}</span>
+                    <span className="text-[#A55704]">{sc.badge}</span>
                     <span className="font-mono text-slate-500">{sc.durationMin} Dk</span>
                   </div>
-                  <h2 className="text-lg font-extrabold text-[#0f2342]">{sc.title}</h2>
+                  <h2 className="text-lg font-extrabold text-[#09251C]">{sc.title}</h2>
                   <div className="mt-2 text-xs font-semibold text-slate-700">{sc.formatSummary}</div>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">{sc.desc}</p>
                 </div>
@@ -160,7 +160,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
                   <button
                     type="button"
                     onClick={() => startExam(sc)}
-                    className="w-full rounded-lg bg-[#0f2342] px-4 py-2.5 text-sm font-bold text-white hover:bg-[#1a3664]"
+                    className="w-full rounded-lg bg-[#09251C] px-4 py-2.5 text-sm font-bold text-[#F8EADC] hover:bg-[#0f3a2c]"
                   >
                     {past !== undefined ? 'Senaryoyu Tekrar Çöz' : '3 Soruluk Vizeye Başla'}
                   </button>
@@ -183,14 +183,14 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
       <section className="rounded-xl border border-slate-200 bg-white p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <div className="text-xs font-bold text-red-700">{activeScenario.badge}</div>
-            <h1 className="text-lg font-extrabold text-[#0f2342]">{activeScenario.title}</h1>
+            <div className="text-xs font-bold text-[#A55704]">{activeScenario.badge}</div>
+            <h1 className="text-lg font-extrabold text-[#09251C]">{activeScenario.title}</h1>
             <div className="text-xs text-slate-500">{activeScenario.formatSummary}</div>
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
             {!submitted ? (
-              <div className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 font-mono text-sm font-bold text-[#0f2342]">
+              <div className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-[#FAF6F0] px-3 py-1.5 font-mono text-sm font-bold text-[#09251C]">
                 <Clock className="h-4 w-4" />
                 {formatTime(timeLeftSec)}
               </div>
@@ -212,7 +212,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
               <button
                 type="button"
                 onClick={handleFinish}
-                className="rounded-lg bg-red-700 px-4 py-1.5 text-xs font-bold text-white hover:bg-red-800"
+                className="rounded-lg bg-[#A55704] px-4 py-1.5 text-xs font-bold text-[#F8EADC] hover:bg-[#894603]"
               >
                 Sınavı Bitir &amp; Çözümleri Aç
               </button>
@@ -220,7 +220,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
               <button
                 type="button"
                 onClick={() => startExam(activeScenario)}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#0f2342] px-3.5 py-1.5 text-xs font-bold text-white hover:bg-[#1a3664]"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#09251C] px-3.5 py-1.5 text-xs font-bold text-[#F8EADC] hover:bg-[#0f3a2c]"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
                 Baştan Başla
@@ -232,10 +232,10 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
 
       {/* SORU 1: Kod -> Ekran Çıktısı */}
       <article className="overflow-hidden rounded-xl border border-slate-200 bg-white">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-slate-50 px-5 py-3.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-[#FAF6F0] px-5 py-3.5">
           <div className="flex items-center gap-2">
-            <Terminal className="h-4 w-4 text-red-700" />
-            <h2 className="text-base font-extrabold text-[#0f2342]">
+            <Terminal className="h-4 w-4 text-[#A55704]" />
+            <h2 className="text-base font-extrabold text-[#09251C]">
               {activeScenario.q1Output.title} ({activeScenario.q1Output.points} Puan)
             </h2>
           </div>
@@ -253,7 +253,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
                     activeScenario.q1Output.slideNum
                   )
                 }
-                className="inline-flex items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-[#0f2342]"
+                className="inline-flex items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-[#09251C]"
               >
                 <BookOpen className="h-3.5 w-3.5" />
                 {activeScenario.q1Output.srcLabel}
@@ -278,7 +278,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
                 value={q1Input}
                 onChange={(e) => setQ1Input(e.target.value)}
                 placeholder={'Örnek:\nmain-1: g=5 p=3\nislem: ...'}
-                className="w-full rounded-xl border border-slate-300 bg-slate-50 p-3 font-mono text-xs text-slate-900 focus:border-[#0f2342] focus:bg-white focus:outline-none"
+                className="w-full rounded-xl border border-slate-300 bg-[#FAF6F0] p-3 font-mono text-xs text-slate-900 focus:border-[#09251C] focus:bg-white focus:outline-none"
               />
             </div>
           </div>
@@ -307,10 +307,10 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
 
       {/* SORU 2: Program Yazma */}
       <article className="overflow-hidden rounded-xl border border-slate-200 bg-white">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-slate-50 px-5 py-3.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-[#FAF6F0] px-5 py-3.5">
           <div className="flex items-center gap-2">
-            <Code2 className="h-4 w-4 text-red-700" />
-            <h2 className="text-base font-extrabold text-[#0f2342]">
+            <Code2 className="h-4 w-4 text-[#A55704]" />
+            <h2 className="text-base font-extrabold text-[#09251C]">
               {activeScenario.q2Coding.title} ({activeScenario.q2Coding.points} Puan)
             </h2>
           </div>
@@ -328,7 +328,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
                     activeScenario.q2Coding.slideNum
                   )
                 }
-                className="inline-flex items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-[#0f2342]"
+                className="inline-flex items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-[#09251C]"
               >
                 <BookOpen className="h-3.5 w-3.5" />
                 {activeScenario.q2Coding.srcLabel}
@@ -342,8 +342,8 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
             {activeScenario.q2Coding.prompt}
           </p>
 
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
-            <div className="font-bold text-[#0f2342]">Kısıtlar ve Örnek G/Ç:</div>
+          <div className="rounded-lg border border-slate-200 bg-[#FAF6F0] p-3 text-xs text-slate-700">
+            <div className="font-bold text-[#09251C]">Kısıtlar ve Örnek G/Ç:</div>
             <ul className="mt-1 list-disc space-y-0.5 pl-4">
               {activeScenario.q2Coding.constraints.map((c, i) => (
                 <li key={i}>{c}</li>
@@ -360,7 +360,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
             value={q2Input}
             onChange={(e) => setQ2Input(e.target.value)}
             placeholder={'#include <stdio.h>\n\n// C kodunuzu buraya yazınız...'}
-            className="w-full rounded-xl border border-slate-300 bg-slate-50 p-3 font-mono text-xs text-slate-900 focus:border-[#0f2342] focus:bg-white focus:outline-none"
+            className="w-full rounded-xl border border-slate-300 bg-[#FAF6F0] p-3 font-mono text-xs text-slate-900 focus:border-[#09251C] focus:bg-white focus:outline-none"
           />
 
           {submitted && (
@@ -415,10 +415,10 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
 
       {/* SORU 3: Çalışma Anında Bellek & Call Stack Değerleri */}
       <article className="overflow-hidden rounded-xl border border-slate-200 bg-white">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-slate-50 px-5 py-3.5">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-[#FAF6F0] px-5 py-3.5">
           <div className="flex items-center gap-2">
-            <Cpu className="h-4 w-4 text-red-700" />
-            <h2 className="text-base font-extrabold text-[#0f2342]">
+            <Cpu className="h-4 w-4 text-[#A55704]" />
+            <h2 className="text-base font-extrabold text-[#09251C]">
               {activeScenario.q3Memory.title} ({activeScenario.q3Memory.points} Puan)
             </h2>
           </div>
@@ -436,7 +436,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
                     activeScenario.q3Memory.slideNum
                   )
                 }
-                className="inline-flex items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-[#0f2342]"
+                className="inline-flex items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-[#09251C]"
               >
                 <BookOpen className="h-3.5 w-3.5" />
                 {activeScenario.q3Memory.srcLabel}
@@ -457,7 +457,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
             </pre>
 
             <div className="space-y-2.5 lg:col-span-6">
-              <div className="text-xs font-bold text-[#0f2342]">
+              <div className="text-xs font-bold text-[#09251C]">
                 Bu Andaki Bellek Hücre Değerlerini Yazınız:
               </div>
               {activeScenario.q3Memory.expectedSlots.map((slot, sIdx) => {
@@ -476,12 +476,12 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
                         ? matched
                           ? 'border-emerald-400 bg-emerald-50'
                           : 'border-red-300 bg-red-50/60'
-                        : 'border-slate-200 bg-slate-50'
+                        : 'border-slate-200 bg-[#FAF6F0]'
                     }`}
                   >
                     <div className="mb-1 flex items-center justify-between">
-                      <span className="font-bold text-[#0f2342]">
-                        {slot.scope} → <span className="font-mono text-red-700">{slot.variable}</span>
+                      <span className="font-bold text-[#09251C]">
+                        {slot.scope} → <span className="font-mono text-[#A55704]">{slot.variable}</span>
                       </span>
                       {submitted && (
                         <span className="font-mono font-bold text-emerald-900">
@@ -497,7 +497,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
                         setQ3Inputs((prev) => ({ ...prev, [sIdx]: e.target.value }))
                       }
                       placeholder="Bu andaki değeri yazınız..."
-                      className="w-full rounded border border-slate-300 bg-white px-2.5 py-1 font-mono text-xs text-slate-900 focus:border-[#0f2342] focus:outline-none"
+                      className="w-full rounded border border-slate-300 bg-white px-2.5 py-1 font-mono text-xs text-slate-900 focus:border-[#09251C] focus:outline-none"
                     />
                     {submitted && (
                       <div className="mt-1 text-[11px] text-slate-700">{slot.note}</div>
@@ -509,9 +509,9 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
           </div>
 
           {submitted && (
-            <div className="grid grid-cols-1 gap-4 rounded-xl border border-sky-200 bg-sky-50/60 p-4 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 rounded-xl border border-[#A55704]/30 bg-[#FAF6F0] p-4 lg:grid-cols-2">
               <div>
-                <div className="mb-2 flex items-center gap-1.5 text-xs font-extrabold text-[#0f2342]">
+                <div className="mb-2 flex items-center gap-1.5 text-xs font-extrabold text-[#09251C]">
                   <Layers className="h-3.5 w-3.5" />
                   Bu Andaki Call Stack Sıralaması (Alttan Üste)
                 </div>
@@ -519,7 +519,7 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
                   {activeScenario.q3Memory.expectedStackOrder.map((st, idx) => (
                     <div
                       key={idx}
-                      className="rounded border border-sky-300 bg-white px-3 py-1.5 font-mono text-xs font-bold text-[#0f2342]"
+                      className="rounded border border-[#A55704]/35 bg-white px-3 py-1.5 font-mono text-xs font-bold text-[#09251C]"
                     >
                       {st}
                     </div>
@@ -528,13 +528,13 @@ export const BM101ExamCenter: React.FC<BM101ExamCenterProps> = ({ onPeekSlide })
               </div>
 
               <div>
-                <div className="mb-2 text-xs font-extrabold text-[#0f2342]">
+                <div className="mb-2 text-xs font-extrabold text-[#09251C]">
                   Adım Adım Bellek Zaman Çizelgesi
                 </div>
                 <div className="space-y-1.5 text-xs text-slate-800">
                   {activeScenario.q3Memory.timelineSteps.map((ts) => (
                     <div key={ts.step} className="rounded border border-slate-200 bg-white p-2">
-                      <span className="font-mono font-bold text-red-700">
+                      <span className="font-mono font-bold text-[#A55704]">
                         Adım {ts.step} ({ts.line}):
                       </span>{' '}
                       {ts.action} → <span className="font-mono font-semibold">{ts.memorySummary}</span>

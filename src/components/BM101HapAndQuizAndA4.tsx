@@ -26,7 +26,7 @@ export const BM101HapCards: React.FC<{
     <section className="rounded-xl border border-slate-200 bg-white p-6">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
         <div>
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             {week.tag} — BM101 Hap Bilgiler &amp; Sınav Tuzakları
           </h2>
           <p className="text-sm text-slate-600">
@@ -61,12 +61,12 @@ export const BM101HapCards: React.FC<{
               }}
             >
               <div className="hap-inner">
-                <div className="hap-face flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50/70 p-5 hover:border-[#0f2342]/40">
+                <div className="hap-face flex flex-col justify-between rounded-xl border border-slate-200 bg-[#FAF6F0] p-5 hover:border-[#09251C]/40">
                   <div className="flex items-center justify-between gap-2 text-xs font-medium text-slate-500">
-                    <span className="font-semibold text-red-700">{item.badge}</span>
+                    <span className="font-semibold text-[#A55704]">{item.badge}</span>
                     <span className="truncate">{item.pdfLabel} s.{item.slide}</span>
                   </div>
-                  <p className="my-3 text-[15px] font-bold leading-snug text-[#0f2342]">
+                  <p className="my-3 text-[15px] font-bold leading-snug text-[#09251C]">
                     {item.q}
                   </p>
                   <div className="flex items-center justify-between text-xs text-slate-500">
@@ -75,25 +75,25 @@ export const BM101HapCards: React.FC<{
                   </div>
                 </div>
 
-                <div className="hap-face hap-back flex flex-col justify-between rounded-xl border border-[#0f2342] bg-[#0f2342] p-5 text-white">
-                  <div className="flex items-center justify-between gap-2 text-xs text-slate-300">
-                    <span className="font-semibold text-red-300">{item.badge}</span>
+                <div className="hap-face hap-back flex flex-col justify-between rounded-xl border border-[#09251C] bg-[#09251C] p-5 text-[#F8EADC]">
+                  <div className="flex items-center justify-between gap-2 text-xs text-[#F3D2AF]/80">
+                    <span className="font-semibold text-[#F3D2AF]">{item.badge}</span>
                     <button
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         onPeekSlide(item.pdfFile, item.pdfLabel, item.slide, week.id);
                       }}
-                      className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-semibold text-sky-200 hover:bg-white/10 hover:underline whitespace-nowrap"
+                      className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-semibold text-[#F3D2AF] hover:bg-white/10 hover:underline whitespace-nowrap"
                     >
                       <BookOpen className="h-3 w-3" />
                       s.{item.slide}
                     </button>
                   </div>
-                  <p className="my-2 overflow-y-auto text-sm leading-relaxed text-slate-100">
+                  <p className="my-2 overflow-y-auto text-sm leading-relaxed text-[#F8EADC]">
                     {item.a}
                   </p>
-                  <div className="text-xs text-slate-300">Geri dönmek için tıklayın</div>
+                  <div className="text-xs text-[#F3D2AF]/75">Geri dönmek için tıklayın</div>
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@ export const BM101QuickQuiz: React.FC<{
     <section className="rounded-xl border border-slate-200 bg-white p-6">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
         <div>
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             {week.tag} — Hızlı Soru Çöz ve Doğrula
           </h2>
           <p className="text-sm text-slate-600">
@@ -166,7 +166,7 @@ export const BM101QuickQuiz: React.FC<{
                   : 'border-slate-200 bg-white'
               }`}
             >
-              <div className="mb-3 text-[15px] font-bold text-[#0f2342]">
+              <div className="mb-3 text-[15px] font-bold text-[#09251C]">
                 {qIdx + 1}. {q.q}
               </div>
 
@@ -190,8 +190,8 @@ export const BM101QuickQuiz: React.FC<{
                           : showBad
                           ? 'border-red-400 bg-red-50 text-red-950'
                           : isChosen
-                          ? 'border-[#0f2342] bg-slate-100 font-semibold text-[#0f2342]'
-                          : 'border-slate-200 bg-white text-slate-800 hover:bg-slate-50'
+                          ? 'border-[#09251C] bg-[#F8EADC]/60 font-semibold text-[#09251C]'
+                          : 'border-slate-200 bg-white text-slate-800 hover:bg-[#FAF6F0]'
                       }`}
                     >
                       <input
@@ -200,7 +200,7 @@ export const BM101QuickQuiz: React.FC<{
                         checked={isChosen}
                         disabled={verified}
                         onChange={() => onSelect(qIdx, oIdx)}
-                        className="mt-0.5 accent-[#0f2342]"
+                        className="mt-0.5 accent-[#09251C]"
                       />
                       <span>
                         <strong className="mr-1.5 font-mono">
@@ -229,7 +229,7 @@ export const BM101QuickQuiz: React.FC<{
                       onClick={() =>
                         onPeekSlide(q.pdfFile!, q.pdfLabel || q.pdfFile!, q.slide!, week.id)
                       }
-                      className="inline-flex shrink-0 items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-[#0f2342] hover:bg-slate-100"
+                      className="inline-flex shrink-0 items-center gap-1 rounded border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-[#09251C] hover:bg-[#F8EADC]"
                     >
                       <BookOpen className="h-3 w-3" />
                       s.{q.slide}
@@ -247,7 +247,7 @@ export const BM101QuickQuiz: React.FC<{
           <button
             type="button"
             onClick={onVerify}
-            className="rounded-lg bg-red-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-red-800"
+            className="rounded-lg bg-[#A55704] px-5 py-2.5 text-sm font-bold text-[#F8EADC] hover:bg-[#894603]"
           >
             Cevapları Doğrula ve Puanla
           </button>
@@ -262,12 +262,12 @@ export const BM101QuickQuiz: React.FC<{
    ============================================================ */
 export const BM101A4Sheet: React.FC<{ week: BM101WeekModule }> = ({ week }) => (
   <article className="a4-sheet mx-auto w-full max-w-[210mm] overflow-hidden border border-slate-300 bg-white p-5 text-[#111827] shadow-sm sm:p-8">
-    <header className="mb-4 flex flex-wrap items-end justify-between gap-3 border-b-2 border-[#0f2342] pb-2.5">
+    <header className="mb-4 flex flex-wrap items-end justify-between gap-3 border-b-2 border-[#09251C] pb-2.5">
       <div className="min-w-0">
-        <div className="text-[11px] font-bold tracking-wide text-red-700">
+        <div className="text-[11px] font-bold tracking-wide text-[#A55704]">
           BM101 Bilgisayar Programlama I (C Dili) · {week.tag}
         </div>
-        <h2 className="text-lg font-extrabold text-[#0f2342] [overflow-wrap:anywhere]">
+        <h2 className="text-lg font-extrabold text-[#09251C] [overflow-wrap:anywhere]">
           {week.title} — Özet
         </h2>
       </div>
@@ -282,7 +282,7 @@ export const BM101A4Sheet: React.FC<{ week: BM101WeekModule }> = ({ week }) => (
     <div className="a4-cols grid grid-cols-1 gap-4 md:grid-cols-2">
       {week.summaryA4.map((sec, idx) => (
         <section key={idx} className="a4-section min-w-0">
-          <h3 className="mb-1.5 border-b border-slate-200 pb-1 text-sm font-bold text-red-700">
+          <h3 className="mb-1.5 border-b border-slate-200 pb-1 text-sm font-bold text-[#A55704]">
             {sec.h}
           </h3>
           <ul className="list-disc space-y-1 pl-4 text-[13px] leading-snug text-slate-800">
@@ -300,7 +300,7 @@ export const BM101WeekA4View: React.FC<{ week: BM101WeekModule }> = ({ week }) =
   <div className="space-y-5">
     <div className="no-print flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white p-5">
       <div>
-        <h3 className="text-base font-bold text-[#0f2342]">BM101 A4 Sınav Özeti</h3>
+        <h3 className="text-base font-bold text-[#09251C]">BM101 A4 Sınav Özeti</h3>
         <p className="text-sm text-slate-600">
           Yalnızca BM101 ders ve lab PDF&apos;lerinden derlenmiş yazdırılabilir özet sayfası.
         </p>
@@ -308,7 +308,7 @@ export const BM101WeekA4View: React.FC<{ week: BM101WeekModule }> = ({ week }) =
       <button
         type="button"
         onClick={() => window.print()}
-        className="inline-flex items-center gap-2 rounded-lg bg-red-700 px-4 py-2 text-sm font-bold text-white hover:bg-red-800"
+        className="inline-flex items-center gap-2 rounded-lg bg-[#A55704] px-4 py-2 text-sm font-bold text-[#F8EADC] hover:bg-[#894603]"
       >
         <Printer className="h-4 w-4" />
         A4 Yazdır / PDF Kaydet
@@ -324,7 +324,7 @@ export const BM101AllA4View: React.FC = () => (
   <div className="space-y-6">
     <div className="no-print flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white p-6">
       <div>
-        <h1 className="text-xl font-extrabold text-[#0f2342]">
+        <h1 className="text-xl font-extrabold text-[#09251C]">
           BM101 Tüm Haftaların A4 Özet Paketi
         </h1>
         <p className="text-sm text-slate-600">
@@ -334,7 +334,7 @@ export const BM101AllA4View: React.FC = () => (
       <button
         type="button"
         onClick={() => window.print()}
-        className="inline-flex items-center gap-2 rounded-lg bg-red-700 px-4 py-2.5 text-sm font-bold text-white hover:bg-red-800"
+        className="inline-flex items-center gap-2 rounded-lg bg-[#A55704] px-4 py-2.5 text-sm font-bold text-[#F8EADC] hover:bg-[#894603]"
       >
         <Printer className="h-4 w-4" />
         Tümünü A4 Yazdır / PDF Kaydet

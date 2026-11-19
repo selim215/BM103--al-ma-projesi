@@ -1,4 +1,4 @@
-export type CourseChoice = 'bm103' | 'bm101';
+export type CourseChoice = 'bm103' | 'bm101' | 'mat101';
 
 export type BM101TopMode = 'learn' | 'examples' | 'extra' | 'exam' | 'slides' | 'a4';
 export type BM101SubTab = 'interactive' | 'examples' | 'hap' | 'quiz' | 'a4' | 'slides';

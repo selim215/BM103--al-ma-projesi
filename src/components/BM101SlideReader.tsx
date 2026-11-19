@@ -30,7 +30,7 @@ export const BM101WeekSlideReader: React.FC<BM101WeekSlideReaderProps> = ({
     <section className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
         <div className="min-w-0">
-          <h2 className="text-lg font-bold text-[#0f2342]">
+          <h2 className="text-lg font-bold text-[#09251C]">
             {week.tag} — Görselli Slayt Okuyucu (1:1 PDF + Yan Yana Özet)
           </h2>
           <p className="text-xs text-slate-500">
@@ -51,7 +51,7 @@ export const BM101WeekSlideReader: React.FC<BM101WeekSlideReaderProps> = ({
             type="button"
             disabled={safeIdx >= week.slides.length - 1}
             onClick={() => onChangeSlideIdx(safeIdx + 1)}
-            className="inline-flex items-center gap-1 rounded-lg bg-[#0f2342] px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-[#1a3664] disabled:cursor-not-allowed disabled:opacity-40 whitespace-nowrap"
+            className="inline-flex items-center gap-1 rounded-lg bg-[#09251C] px-3 py-1.5 text-xs font-semibold text-[#F8EADC] transition-colors hover:bg-[#0f3a2c] disabled:cursor-not-allowed disabled:opacity-40 whitespace-nowrap"
           >
             Sonraki
             <ChevronRight className="h-3.5 w-3.5" />
@@ -68,19 +68,19 @@ export const BM101WeekSlideReader: React.FC<BM101WeekSlideReaderProps> = ({
             onClick={() => onChangeSlideIdx(idx)}
             className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-xs font-semibold tabular-nums transition-colors ${
               idx === safeIdx
-                ? 'border-[#0f2342] bg-[#0f2342] text-white'
-                : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-slate-100'
+                ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]'
+                : 'border-slate-200 bg-[#FAF6F0] text-slate-700 hover:border-slate-300 hover:bg-[#F8EADC]'
             }`}
           >
             <span
               className={`rounded px-1 text-[10px] font-bold ${
                 s.sourceKind === 'lab'
                   ? idx === safeIdx
-                    ? 'bg-sky-400 text-slate-950'
+                    ? 'bg-[#F3D2AF] text-[#09251C]'
                     : 'bg-sky-100 text-sky-900'
                   : idx === safeIdx
-                  ? 'bg-red-500 text-white'
-                  : 'bg-red-100 text-red-900'
+                  ? 'bg-[#A55704] text-[#F8EADC]'
+                  : 'bg-[#F8EADC] text-[#A55704]'
               }`}
             >
               {s.sourceKind === 'lab' ? 'LAB' : 'DERS'}
@@ -91,17 +91,17 @@ export const BM101WeekSlideReader: React.FC<BM101WeekSlideReaderProps> = ({
       </div>
 
       {/* Frame Header */}
-      <div className="overflow-hidden rounded-xl border border-[#0f2342]">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b-4 border-red-700 bg-[#0f2342] px-5 py-3.5 text-white">
+      <div className="overflow-hidden rounded-xl border border-[#09251C]">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b-4 border-[#A55704] bg-[#09251C] px-5 py-3.5 text-[#F8EADC]">
           <div className="min-w-0">
-            <div className="text-[11px] font-semibold text-sky-300">
+            <div className="text-[11px] font-semibold text-[#F3D2AF]">
               {slide.sourceKind === 'lab' ? 'Laboratuvar PDF' : 'Ders Slaytı'} · {slide.pdfLabel} · Sayfa {slide.n}
             </div>
             <strong className="block text-base font-bold [overflow-wrap:anywhere]">
               {slide.t}
             </strong>
           </div>
-          <span className="shrink-0 font-mono text-xs text-slate-300">
+          <span className="shrink-0 font-mono text-xs text-[#F3D2AF]/80">
             {safeIdx + 1} / {week.slides.length}
           </span>
         </div>
@@ -118,9 +118,9 @@ export const BM101WeekSlideReader: React.FC<BM101WeekSlideReaderProps> = ({
           </div>
 
           <div className="min-w-0 space-y-4 lg:col-span-5">
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <div className="mb-1.5 flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wide text-[#0f2342]">
-                <FileText className="h-3.5 w-3.5 text-red-700" />
+            <div className="rounded-xl border border-slate-200 bg-[#FAF6F0] p-4">
+              <div className="mb-1.5 flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wide text-[#09251C]">
+                <FileText className="h-3.5 w-3.5 text-[#A55704]" />
                 Görsel &amp; Slayt Açıklaması
               </div>
               <p className="text-sm leading-relaxed text-slate-800 [overflow-wrap:anywhere]">
@@ -144,7 +144,7 @@ export const BM101WeekSlideReader: React.FC<BM101WeekSlideReaderProps> = ({
 
             {slide.codeSnippet && (
               <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 text-slate-100">
-                <div className="mb-2 flex items-center gap-1.5 text-xs font-bold text-sky-300">
+                <div className="mb-2 flex items-center gap-1.5 text-xs font-bold text-[#F3D2AF]">
                   <Code2 className="h-3.5 w-3.5" />
                   Slayttaki C Kodu
                 </div>
@@ -216,7 +216,7 @@ export const BM101AllSlidesView: React.FC<BM101AllSlidesViewProps> = ({
       <div className="rounded-xl border border-slate-200 bg-white p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h1 className="text-xl font-extrabold text-[#0f2342]">
+            <h1 className="text-xl font-extrabold text-[#09251C]">
               BM101 PDF Slayt Arşivi (6 Ders + 6 Lab PDF)
             </h1>
             <p className="text-sm text-slate-600">
@@ -229,8 +229,8 @@ export const BM101AllSlidesView: React.FC<BM101AllSlidesViewProps> = ({
               onClick={() => setRawBrowserOpen((v) => !v)}
               className={`rounded-lg border px-3.5 py-2 text-xs font-bold transition-colors ${
                 rawBrowserOpen
-                  ? 'border-[#0f2342] bg-[#0f2342] text-white'
-                  : 'border-slate-300 bg-slate-50 text-[#0f2342] hover:bg-slate-100'
+                  ? 'border-[#09251C] bg-[#09251C] text-[#F8EADC]'
+                  : 'border-slate-300 bg-[#FAF6F0] text-[#09251C] hover:bg-[#F8EADC]'
               }`}
             >
               {rawBrowserOpen ? 'Açıklamalı Görünüme Dön' : '12 PDF’ten İstediğin Sayfayı Aç'}
@@ -252,8 +252,8 @@ export const BM101AllSlidesView: React.FC<BM101AllSlidesViewProps> = ({
                     }}
                     className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-colors ${
                       w.id === activeWeek.id
-                        ? 'bg-[#0f2342] text-white'
-                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                        ? 'bg-[#09251C] text-[#F8EADC]'
+                        : 'bg-[#FAF6F0] text-slate-700 hover:bg-[#F8EADC]'
                     }`}
                   >
                     {w.tag}
@@ -267,13 +267,13 @@ export const BM101AllSlidesView: React.FC<BM101AllSlidesViewProps> = ({
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Ara (Call Stack, static, ASCII)..."
-                  className="w-full rounded-lg border border-slate-300 bg-slate-50 py-1.5 pl-9 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#0f2342] focus:bg-white focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 bg-[#FAF6F0] py-1.5 pl-9 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#09251C] focus:bg-white focus:outline-none"
                 />
               </div>
             </div>
 
             {searchQuery.trim() !== '' && (
-              <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+              <div className="mt-4 rounded-lg border border-slate-200 bg-[#FAF6F0] p-4">
                 <div className="mb-2 text-xs font-bold text-slate-600">
                   Sonuçlar ({searchResults.length})
                 </div>
@@ -290,9 +290,9 @@ export const BM101AllSlidesView: React.FC<BM101AllSlidesViewProps> = ({
                           onSelectSlideIdx(res.slideIdx);
                           setSearchQuery('');
                         }}
-                        className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-left text-xs font-semibold text-[#0f2342] hover:border-[#0f2342]"
+                        className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-left text-xs font-semibold text-[#09251C] hover:border-[#09251C]"
                       >
-                        <span className="text-red-700">{res.pdfLabel} s.{res.slideNum}:</span> {res.title}
+                        <span className="text-[#A55704]">{res.pdfLabel} s.{res.slideNum}:</span> {res.title}
                       </button>
                     ))}
                   </div>
@@ -311,7 +311,7 @@ export const BM101AllSlidesView: React.FC<BM101AllSlidesViewProps> = ({
                     setRawBrowsePdf(e.target.value);
                     setRawPageNum(1);
                   }}
-                  className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-[#0f2342]"
+                  className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-[#09251C]"
                 >
                   {ALL_12_PDFS.map((p) => (
                     <option key={p.file} value={p.file}>
@@ -329,7 +329,7 @@ export const BM101AllSlidesView: React.FC<BM101AllSlidesViewProps> = ({
                     type="button"
                     disabled={rawPageNum <= 1}
                     onClick={() => setRawPageNum((p) => Math.max(1, p - 1))}
-                    className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-[#0f2342] disabled:opacity-40"
+                    className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-[#09251C] disabled:opacity-40"
                   >
                     &lt; Önceki
                   </button>
@@ -342,13 +342,13 @@ export const BM101AllSlidesView: React.FC<BM101AllSlidesViewProps> = ({
                       const val = parseInt(e.target.value, 10) || 1;
                       setRawPageNum(Math.min(Math.max(1, val), activeRawPdfObj.pages));
                     }}
-                    className="w-24 rounded-lg border border-slate-300 px-3 py-2 text-center font-mono text-sm font-bold text-[#0f2342]"
+                    className="w-24 rounded-lg border border-slate-300 px-3 py-2 text-center font-mono text-sm font-bold text-[#09251C]"
                   />
                   <button
                     type="button"
                     disabled={rawPageNum >= activeRawPdfObj.pages}
                     onClick={() => setRawPageNum((p) => Math.min(activeRawPdfObj.pages, p + 1))}
-                    className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-[#0f2342] disabled:opacity-40"
+                    className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-[#09251C] disabled:opacity-40"
                   >
                     Sonraki &gt;
                   </button>
